@@ -455,3 +455,28 @@ form button:hover {
     border-top: 1px solid var(--border);
     margin-top: 2rem;
 }
+
+/* ── MODAL ── */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 200;
+    align-items: centers;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius:8px;
+    padding: 2.5rem;
+    max-width: 550px;
+    width: 90%;
+    position: relative;
+}
