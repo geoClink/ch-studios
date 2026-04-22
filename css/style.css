@@ -480,3 +480,29 @@ form button:hover {
     width: 90%;
     position: relative;
 }
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: var(--font-mono);
+}
+
+.modal-close:hover {
+    color: var(--accent);
+}
+
+.service {
+    cursor: pointer;
+}
