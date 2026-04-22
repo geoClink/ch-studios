@@ -163,10 +163,82 @@ footer {
 
 
 /* ── WORK ── */
+#work h1 {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
 
+.project {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+}
 
+.project:hover {
+border-color: var(--accent);
+}
+
+.project h2 {
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.project-span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    letter-transform: uppercase;
+}
 /* ── SERVICES ── */
+#services h1 {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.service {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: border-color 0.2s;
+}
+
+.service:hover {
+    border-color: var(--accent);
+}
+
+.service h2 {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.service p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
 
 /* ── ABOUT ── */
 
