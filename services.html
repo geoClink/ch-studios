@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Services - CH Studios</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
 
-    <body>
-        <nav>
-            <a href="index.html">CH Studios</a>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-        <section id="services">
-            <h1>Services</h1>
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-            <div class="services-grid">
+    <section id="services">
+        <h1>Services</h1>
+
+        <div class="services-grid">
             <div class="service" onclick="openModal('ios')">
                 <h2>iOS Development</h2>
                 <p>Native iOS apps built with SwiftUI and Swift. From concept to TestFlight to App Store.</p>
@@ -39,64 +40,68 @@
             </div>
         </div>
 
-            <a href="contact.html" class="btn-primary">Let's Connect</a>
-        </section>
-
-        
-
-
-        <!-- iOS Modal -->
-
-        <div class="modal" id="modal-ios">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal('ios')">x</button>
-                <h2>iOS & Mobile</h2>
-                <p>We build native iOS apps using SwiftUI and Swift — from inital concept through TestFlight testing to App Store submission.</p>
-                <ul class="stack-list">
-                    <li>SwiftUI & UIKit — native iOS interfaces</li>
-                    <li>Swift Concurrency — async data and real-time sync</li>
-                    <li>CoreML — on-device machine learning</li>
-                    <li>Firebase & Supabase — backend integration</li>
-                </ul>
-                <a href="contact.html" class="btn-primary">Let's Connect</a>
-            </div>
-        </div>
-
-        <!-- Full-Stack Modal -->
-        <div class="modal" id="modal-fullstack">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal('fullstack')">✕</button>
-                <h2>Full-Stack Product Development</h2>
-                 <p>End-to-end product development from backend architecture to polished frontend. We own the whole stack so nothing gets lost in translation.</p>
-                 <ul class="stack-list">
-                     <li>FastAPI & Python — modern backend development</li>
-                    <li>REST API design and integration</li>
-                    <li>Database architecture and optimization</li>
-                            <li>Deployment and infrastructure</li>
-                  </ul>
-                 <a href="contact.html" class="btn-primary">Let's Connect</a>
-            </div>
-        </div>
-        <!-- Design Modal -->
-<div class="modal" id="modal-design">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('design')">✕</button>
-        <h2>Design-Forward Apps</h2>
-        <p>Software that looks as good as it works. We apply Design Thinking methodology to every project — understanding the user first, then building the right thing the right way.</p>
-        <ul class="stack-list">
-            <li>Design Thinking methodology</li>
-            <li>User research and prototyping</li>
-            <li>Accessibility and inclusive design</li>
-            <li>Polished UI with attention to detail</li>
-        </ul>
         <a href="contact.html" class="btn-primary">Let's Connect</a>
+    </section>
+
+
+
+
+    <!-- iOS Modal -->
+
+    <div class="modal" id="modal-ios">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('ios')">x</button>
+            <h2>iOS & Mobile</h2>
+            <p>We build native iOS apps using SwiftUI and Swift — from inital concept through TestFlight testing to App
+                Store submission.</p>
+            <ul class="stack-list">
+                <li>SwiftUI & UIKit — native iOS interfaces</li>
+                <li>Swift Concurrency — async data and real-time sync</li>
+                <li>CoreML — on-device machine learning</li>
+                <li>Firebase & Supabase — backend integration</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Connect</a>
+        </div>
     </div>
-</div>
 
-        <footer>
-            <p>© 2026 CH Studios. Detroit, MI.</p>
-        </footer>
+    <!-- Full-Stack Modal -->
+    <div class="modal" id="modal-fullstack">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('fullstack')">✕</button>
+            <h2>Full-Stack Product Development</h2>
+            <p>End-to-end product development from backend architecture to polished frontend. We own the whole stack so
+                nothing gets lost in translation.</p>
+            <ul class="stack-list">
+                <li>FastAPI & Python — modern backend development</li>
+                <li>REST API design and integration</li>
+                <li>Database architecture and optimization</li>
+                <li>Deployment and infrastructure</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Connect</a>
+        </div>
+    </div>
+    <!-- Design Modal -->
+    <div class="modal" id="modal-design">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('design')">✕</button>
+            <h2>Design-Forward Apps</h2>
+            <p>Software that looks as good as it works. We apply Design Thinking methodology to every project —
+                understanding the user first, then building the right thing the right way.</p>
+            <ul class="stack-list">
+                <li>Design Thinking methodology</li>
+                <li>User research and prototyping</li>
+                <li>Accessibility and inclusive design</li>
+                <li>Polished UI with attention to detail</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Connect</a>
+        </div>
+    </div>
 
-<script src="js/main.js"></script>
-    </body>
-    </html>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
