@@ -165,7 +165,7 @@ footer {
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 0.85;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -178,6 +178,10 @@ footer {
 
 
 /* ── WORK ── */
+#work {
+    max-width: 900px;
+}
+
 #work h1 {
     font-family: var(--font-mono);
     font-size: 2.5rem;
@@ -195,6 +199,13 @@ footer {
 
 .project:hover {
 border-color: var(--accent);
+}
+.project-link:hover {
+    text-decoration: none;
+}
+.project:hover h2{
+text-decoration: underline;
+text-underline-offset: 4px;
 }
 
 .project h2 {
@@ -216,6 +227,7 @@ border-color: var(--accent);
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
+
 /* ── SERVICES ── */
 #services h1 {
     font-family: var(--font-mono);
@@ -393,6 +405,19 @@ form button:hover {
     max-width: 800px;
 }
 
+.case-study-hint {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.project:hover .case-study-hint {
+    opacity: 1;
+}
 .case-header {
     margin-bottom: 4rem;
     padding-bottom: 2rem;
