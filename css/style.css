@@ -79,6 +79,10 @@ nav ul a {
     text-transform: uppercase;
 }
 
+nav ul a.active {
+    color: var(--accent);
+}
+
 nav ul a:hover {
     color:var(--accent);
     text-decoration: none;
@@ -350,11 +354,11 @@ outline: none;
 transition: border-color 0.2s;
 }
 
-form input:focus, formtextarea:focus {
+form input:focus, form textarea:focus {
     border-color: var(--accent);
 }
 
-form input::placeholder, formtextarea::placeholder {
+form input::placeholder, form textarea::placeholder {
     color: var(--text-muted);
 }
 
@@ -378,7 +382,7 @@ form button:hover {
     opacity: 0.85;
 }
 
-#contract a {
+#contact a {
     color: var(--accent);
     font-family: var(--font-mono);
     font-size: 0.85rem;
