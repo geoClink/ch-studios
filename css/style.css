@@ -99,6 +99,17 @@ section {
     margin: 0 auto;
 }
 
+/* ── TESTIMONIAL ── */
+#testimonial {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    max-width: 100%;
+    padding: 5rem 3rem;
+}
+
+
+
 /* ── FOOTER ── */
 footer {
     border-top: 1px solid var(--border);
@@ -115,7 +126,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-height: 90vh;
+    min-height: 60vh;
     border-bottom: 1px solid var(--border);
     padding-top: 0;
 }
@@ -652,7 +663,7 @@ form button:hover {
 @media (max-width: 768px) {
     /* Nav */
     nav {
-        padding: 1re, 1.5rem;
+        padding: 1rem 1.5rem;
     }
 
     nav ul {
@@ -669,7 +680,7 @@ form button:hover {
 
     /* Sections */
     section {
-        padding: 4re, 1.5rem;
+        padding: 4rem 1.5rem;
     }
 
     /* Hero */
@@ -684,12 +695,12 @@ form button:hover {
 
     .btn-primary, .btn-ghost {
         text-align: center;
-        width: 100%
+        width: 100%;
     }
 
     /* Work */
     #work {
-        max-width: 100%
+        max-width: 100%;
     }
 
     /* Services */
@@ -710,7 +721,7 @@ form button:hover {
     /* Modal */
     .modal-content {
         padding: 1.5rem;
-        width: 95%
+        width: 95%;
     }
 
     /* Footer */
