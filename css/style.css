@@ -391,6 +391,7 @@ footer {
     margin-top: 1.5rem;
     display: inline-block;
 }
+
 .member {
     cursor: pointer;
 }
@@ -645,4 +646,75 @@ form button:hover {
 #not-found p {
     color: var(--text-muted);
     margin-bottom: 2rem;
+}
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+    /* Nav */
+    nav {
+        padding: 1re, 1.5rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    nav ul a {
+        font-size: 0.7rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 4re, 1.5rem;
+    }
+
+    /* Hero */
+    #hero h1 {
+        font-size: clamp(1.8rem, 6vw, 3rem);
+    }
+
+    .hero-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-primary, .btn-ghost {
+        text-align: center;
+        width: 100%
+    }
+
+    /* Work */
+    #work {
+        max-width: 100%
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Case Study */
+    .case-header h1 {
+        font-size: 2rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem;
+    }
 }
