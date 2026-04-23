@@ -463,7 +463,7 @@ form button:hover {
     inset: 0;
     background-color: rgba(0,0,0,0.8);
     z-index: 200;
-    align-items: centers;
+    align-items: center;
     justify-content: center;
 }
 
@@ -478,6 +478,8 @@ form button:hover {
     padding: 2.5rem;
     max-width: 550px;
     width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
 }
 
@@ -486,6 +488,8 @@ form button:hover {
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
+
+
 
 .modal-close {
     position: absolute;
