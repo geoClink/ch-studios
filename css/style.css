@@ -2,7 +2,7 @@
 :root {
     --background: #0a0a0a;
     --surface: #111111;
-    --border:#222222;
+    --border: #222222;
     --text: #f0f0f0;
     --text-muted: #888888;
     --accent: #00ff94;
@@ -12,7 +12,9 @@
 }
 
 /* ── RESET ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -36,7 +38,9 @@ a:hover {
     text-decoration: underline;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -84,7 +88,7 @@ nav ul a.active {
 }
 
 nav ul a:hover {
-    color:var(--accent);
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -113,10 +117,10 @@ footer {
     align-items: flex-start;
     min-height: 90vh;
     border-bottom: 1px solid var(--border);
-    padding-top:0;
+    padding-top: 0;
 }
 
-#hero h1{
+#hero h1 {
     font-size: clamp(2rem, 4vw, 4rem);
     font-family: var(--font-mono);
     color: var(--text);
@@ -173,7 +177,7 @@ footer {
 .btn-ghost:hover {
     border-color: var(--accent);
     color: var(--accent);
-    text-decoration:  none;
+    text-decoration: none;
 }
 
 
@@ -198,14 +202,16 @@ footer {
 }
 
 .project:hover {
-border-color: var(--accent);
+    border-color: var(--accent);
 }
+
 .project-link:hover {
     text-decoration: none;
 }
-.project:hover h2{
-text-decoration: underline;
-text-underline-offset: 4px;
+
+.project:hover h2 {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .project h2 {
@@ -274,7 +280,7 @@ text-underline-offset: 4px;
     margin-bottom: 1rem;
 }
 
-#about > p {
+#about>p {
     color: var(--text-muted);
     font-size: 1rem;
     max-width: 600px;
@@ -343,6 +349,48 @@ text-underline-offset: 4px;
     color: var(--accent);
 }
 
+/* ── MEMBER MODAL ── */
+.modal-headshot {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent);
+}
+.modal-content p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.modal-role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.modal-details span {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.member {
+    cursor: pointer;
+}
+
 
 /* ── CONTACT ── */
 #contact h1 {
@@ -364,23 +412,26 @@ form {
     margin-bottom: 2rem;
 }
 
-form input, form textarea {
-background-color: var(--surface);
-border: 1px solid var(--border);
-border-radius: 4px;
-padding: 0.85rem 1rem;
-color: var(--text);
-font-family: var(--font-mono);
-font-size: 0.85rem;
-outline: none;
-transition: border-color 0.2s;
+form input,
+form textarea {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
-form input:focus, form textarea:focus {
+form input:focus,
+form textarea:focus {
     border-color: var(--accent);
 }
 
-form input::placeholder, form textarea::placeholder {
+form input::placeholder,
+form textarea::placeholder {
     color: var(--text-muted);
 }
 
@@ -428,6 +479,7 @@ form button:hover {
 .project:hover .case-study-hint {
     opacity: 1;
 }
+
 .case-header {
     margin-bottom: 4rem;
     padding-bottom: 2rem;
@@ -511,7 +563,7 @@ form button:hover {
     display: none;
     position: fixed;
     inset: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 200;
     align-items: center;
     justify-content: center;
@@ -524,7 +576,7 @@ form button:hover {
 .modal-content {
     background-color: var(--surface);
     border: 1px solid var(--border);
-    border-radius:8px;
+    border-radius: 8px;
     padding: 2.5rem;
     max-width: 550px;
     width: 90%;

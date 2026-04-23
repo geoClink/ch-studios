@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Flight - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="case-study">
+
+        <div class="case-header">
+            <a href="work.html" class="back-link">← Back to Work</a>
+            <h1>Take Flight — A Bird Life</h1>
+            <p class="client">CH Studios · Apple Developer Academy Challenge</p>
+            <span class="tech-stack">SwiftUI · SpriteKit · SwiftData · GameKit · CoreMotion · GameController</span>
+        </div>
+
+        <div class="case-body">
+
+            <div class="case-block">
+                <h2>Overview</h2>
+                <p>Take Flight is a survival simulation game where you play as a bird trying to live a full life. Manage hunger, avoid predators, collect nest materials, find a mate, hatch and raise baby birds, and ultimately escape the island. Built as an Apple Developer Academy challenge, it features a complete game loop across a large open world with multiple interconnected systems running simultaneously.</p>
+            </div>
+
+            <div class="case-block">
+                <h2>The Challenge</h2>
+                <p>Games are among the most technically complex iOS apps to build. The Academy challenge required delivering a polished, complete product under time pressure. The team chose to build a game with real physics, persistent state, real-time AI, multiple minigame scenes, Game Center achievements, sound, haptics, and a full tutorial system — all working together without breaking.</p>
+            </div>
+
+            <div class="case-block">
+                <h2>What We Built</h2>
+                <p>The game world is an 8000x5000 point open map with a smooth exponential-damping camera system, player-clamped boundaries, and a full map mode. The player manages three status bars — hunger, predator proximity, and baby count — all draining or updating in real time. Predators patrol the world on randomized movement paths and trigger a reaction minigame on contact. Collecting materials, building a nest, finding a mate, and raising babies each trigger their own fully animated SpriteKit minigame scenes with onboarding flows, timers, physics, and haptic feedback. The final escape triggers a Flappy Bird-style obstacle course with a 15-second countdown and a Game Center achievement on completion.</p>
+            </div>
+
+            <div class="case-block">
+                <h2>Our Role</h2>
+                <p>CH Studios contributed across the full codebase. George owned the hunger bar system, item pickup and respawn logic, and the draining HUD components. Jaiden led the core SpriteKit architecture, all minigame scenes, the GameKit achievement system, the predator AI, the male bird wandering behavior, the camera system, and the SwiftData persistence layer. The two worked together on the ViewModel bridge, scene transition system, and tutorial flow.</p>
+            </div>
+
+            <div class="case-block">
+                <h2>Tech Stack</h2>
+                <ul class="stack-list">
+                    <li>SwiftUI — all menus, HUD overlays, status bars, inventory, and game over screens</li>
+                    <li>SpriteKit — open world game scene, physics, animations, and all five minigame scenes</li>
+                    <li>SwiftData — persistent game state across sessions including player position, nest, baby, and inventory</li>
+                    <li>GameKit — Game Center authentication and eight achievement milestones</li>
+                    <li>CoreMotion — accelerometer-based tilt input mode for the feed minigame</li>
+                    <li>GameController — keyboard and external controller support throughout</li>
+                </ul>
+            </div>
+
+            <div class="case-block">
+                <h2>Minigames</h2>
+                <ul class="stack-list">
+                    <li>Predator Escape — timing bar reaction game, tap to land needle in a safe zone</li>
+                    <li>Feed Yourself — catch falling food while avoiding spiders, supports keyboard and tilt input</li>
+                    <li>Build a Nest — memory and drag-and-drop puzzle using collected materials</li>
+                    <li>Feed Baby Birds — swipe rope physics to drop food into a moving catcher</li>
+                    <li>Leave the Island — Flappy Bird-style escape with a 15-second countdown</li>
+                </ul>
+            </div>
+
+            <div class="case-block">
+                <h2>Outcome</h2>
+                <p>Take Flight was completed and presented as part of the Apple Developer Academy challenge program. The game features a full save and resume system, eight Game Center achievements, keyboard and controller support for iPad and Mac Catalyst, a complete tutorial system, and polished audio and haptic feedback throughout. It stands as one of the most technically complex projects built at the Academy.</p>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

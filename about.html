@@ -1,60 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About - CH Studios</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-        <nav>
-            <a href="index.html">CH Studios</a>
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<body>
 
-        <section id="about">
-            <h1>About CH Studios</h1>
-            <p> A Detroit-based software studio crafting mobile apps and full stack products.</p>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-            <p class="founding-story">We were both new to coding when we met at the Apple Developer Academy. We got randomly assigned to a project together, worked well, and just kept choosing each other. When a client needed an LLC to pay us, we stopped being classmates and became a studio. That was the moment CH Studios was born — not from a business plan, but from good work and the right opportunity.</p>
+    <section id="about">
+        <h1>About CH Studios</h1>
+        <p> A Detroit-based software studio crafting mobile apps and full stack products.</p>
 
-            <div class="team-grid">
-                <div class="member">
-                    <img src="images/team/george-headshot.png" alt="George Clinkscales Jr.">
-                    <h2>George Clinkscales Jr.</h2>
-                    <p>iOS & Full-Stack Engineer</p>
-                    <div class="member-links">
-                    <a href="https://linkedin.com/in/george-clinkscales" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
-                    
+        <p class="founding-story">We were both new to coding when we met at the Apple Developer Academy. We got randomly
+            assigned to a project together, worked well, and just kept choosing each other. When a client needed an LLC
+            to pay us, we stopped being classmates and became a studio. That was the moment CH Studios was born — not
+            from a business plan, but from good work and the right opportunity.</p>
+
+        <div class="team-grid">
+            <div class="member" onclick="openModal('george')">
+                <img src="images/team/george-headshot.png" alt="George Clinkscales Jr.">
+                <h2>George Clinkscales Jr.</h2>
+                <p>iOS & Full-Stack Engineer</p>
+                <div class="member-links">
+                    <a href="https://linkedin.com/in/george-clinkscales" target="_blank" rel="noopener noreferrer"
+                        onclick="event.stopPropagation()">LinkedIn</a>
+                    <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer"
+                        onclick="event.stopPropagation()"">GitHub</a>
+                    <a href=" https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer"
+                        onclick="event.stopPropagation()">Portfolio</a>
+
                 </div>
             </div>
 
             <div class="member">
-                    <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley">
-                    <h2>Jaiden Henley</h2>
-                     <p>iOS & Full Stack Engineer</p>
-                     <div class="member-links">
-                     <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley">
+                <h2>Jaiden Henley</h2>
+                <p>iOS & Full Stack Engineer</p>
+                <div class="member-links">
+                    <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
                     <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                    <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank"
+                        rel="noopener noreferrer">Portfolio</a>
                 </div>
-                </div>
-                </div>
-        </section>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>© 2026 CH Studios. Detroit, MI.</p>
-        </footer>
-        <script src="js/main.js"></script>
-    </body>
-    </html>
+    <div class="modal" id="modal-george">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('george')">✕</button>
+            <img src="images/team/george-headshot.png" alt="George Clinkscales Jr." class="modal-headshot">
+            <h2>George Clinkscales Jr.</h2>
+            <p class="modal-role">iOS & Full-Stack Engineer · Co-Founder</p>
+            <p>I'm originally from Houston and studied Agricultural Business in Colorado before finding my way to
+                software development through the Apple Developer Academy in Detroit. Growing up with a programmer for a
+                dad, coding was always around me — the Academy gave me the chance to actually try it, and I haven't
+                looked back. I build across the full stack — SwiftUI frontends, Python backends, and everything in
+                between. My app Stamped! A City Passport is live on the App Store, featuring Apple Intelligence, a live
+                currency converter, and support for 8 languages.</p>
+            <div class="modal-details">
+                <span>🎓 Apple Developer Academy — Graduating May 2026</span>
+                <span>📱 <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City
+                        Passport — View on App Store</a></span>
+            </div>
+            <div class="member-links">
+                <a href="https://linkedin.com/in/george-clinkscales" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
