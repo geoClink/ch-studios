@@ -387,6 +387,10 @@ footer {
     color: var(--text-muted);
 }
 
+.modal-content .btn-primary {
+    margin-top: 1.5rem;
+    display: inline-block;
+}
 .member {
     cursor: pointer;
 }
