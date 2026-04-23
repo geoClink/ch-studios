@@ -22,6 +22,7 @@ Official website for CH Studios — built with vanilla HTML, CSS, and JavaScript
 
 - **CommonSight** — Civic tech platform contracted by We Change Community Consulting
 - **CoastCast** — Full-stack beach conditions app with on-device ML
+- **Take Flight — A Bird Life** — iOS survival simulation game built with SpriteKit, SwiftData, and GameKit
 
 ## Tech Stack
 
@@ -33,9 +34,25 @@ Official website for CH Studios — built with vanilla HTML, CSS, and JavaScript
 ## Contact
 
 📧 chstudiosdetroit@gmail.com
-🌐 chstudios.com
+🌐 https://geoclink.github.io/ch-studios/index.html
 📍 Detroit, MI
 
 ## Founded
 
 2026 — George Clinkscales & Jaiden Henley
+
+## The Team
+
+**George Clinkscales Jr.** — iOS & Full-Stack Engineer
+- 🌐 [Portfolio](https://geoclink.github.io/portfolio/)
+- 💼 [LinkedIn](https://linkedin.com/in/george-clinkscales)
+- 🐙 [GitHub](https://github.com/geoClink)
+
+**Jaiden Henley** — iOS & Full-Stack Engineer
+- 🌐 [Portfolio](https://jaidenhenley.github.io/JaidenHenleyPort/)
+- 💼 [LinkedIn](https://www.linkedin.com/in/jaiden-henley/)
+- 🐙 [GitHub](https://github.com/jaidenhenley)
+
+## Live Apps
+
+- 📱 [Stamped! A City Passport](https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336) — Live on the App Store
