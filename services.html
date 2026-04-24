@@ -25,14 +25,14 @@
 
         <div class="services-grid">
             <div class="service" onclick="openModal('ios')">
-                <h2>iOS Development</h2>
+                <h2>Full-Stack iOS Development</h2>
                 <p>Native iOS apps built with SwiftUI and Swift. From concept to TestFlight to App Store.</p>
             </div>
 
-            <div class="service" onclick="openModal('fullstack')">
-                <h2>Full-Stack Product Development</h2>
-                <p>End-to-end products with modern backends and polished frontends. Built to scale.</p>
-            </div>
+            <div class="service" onclick="openModal('game_development')">
+    <h2>iOS Game Development</h2>
+    <p>Premium mobile experiences built natively for iPhone and iPad. Optimized for Apple Silicon and Metal performance.</p>
+</div>
 
             <div class="service" onclick="openModal('design')">
                 <h2>Design-Forward Apps</h2>
@@ -70,7 +70,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('ios')">x</button>
             <h2>iOS & Mobile</h2>
-            <p>We build native iOS apps using SwiftUI and Swift — from inital concept through TestFlight testing to App
+            <p>We build native iOS apps using SwiftUI and Swift — from initial concept through TestFlight testing to App
                 Store submission.</p>
             <ul class="stack-list">
                 <li>SwiftUI & UIKit — native iOS interfaces</li>
@@ -82,22 +82,21 @@
         </div>
     </div>
 
-    <!-- Full-Stack Modal -->
-    <div class="modal" id="modal-fullstack">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('fullstack')">✕</button>
-            <h2>Full-Stack Product Development</h2>
-            <p>End-to-end product development from backend architecture to polished frontend. We own the whole stack so
-                nothing gets lost in translation.</p>
-            <ul class="stack-list">
-                <li>FastAPI & Python — modern backend development</li>
-                <li>REST API design and integration</li>
-                <li>Database architecture and optimization</li>
-                <li>Deployment and infrastructure</li>
-            </ul>
-            <a href="contact.html" class="btn-primary">Let's Connect</a>
-        </div>
+    <!-- Mobile Game Development -->
+    <div class="modal" id="modal-game_development">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('game_development')">✕</button>
+        <h2>iOS Game Development</h2>
+        <p>Specializing in high-fidelity games designed specifically for the Apple ecosystem. I leverage Apple's latest hardware and software features to create seamless, immersive gameplay.</p>
+        <ul class="stack-list">
+            <li><strong>SwiftUI & SpriteKit</strong> — Native frameworks for lightning-fast 2D games</li>
+            <li><strong>Game Center Integration</strong> — Leaderboards, achievements, and multiplayer</li>
+            <li><strong>Metal Performance</strong> — Optimized graphics for the latest A-series and M-series chips</li>
+            <li><strong>Haptic Engine</strong> — Immersive tactile feedback designed for iPhone</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">Build My iOS Game</a>
     </div>
+</div>
     <!-- Design Modal -->
     <div class="modal" id="modal-design">
         <div class="modal-content">
