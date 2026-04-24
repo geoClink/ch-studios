@@ -175,14 +175,26 @@ footer {
 }
 
 .btn-ghost {
+  /* Layout */
+    display: inline-flex;           /* Switch to flex */
+    align-items: center;     /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    height: 44px;           /* MATCH THE BADGE EXACTLY */
+    transform: translateY(8px);
+    
+    /* Box Model */
     border: 1px solid var(--border);
+    padding: 0 1.5rem;       /* Remove vertical padding, keep horizontal */
+    box-sizing: border-box;  /* Ensure border is inside the 44px */
+    
+    /* Typography */
     color: var(--text);
-    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-decoration: none;   /* Essential for <a> tags */
 }
 
 .btn-ghost:hover {
@@ -578,6 +590,19 @@ form button:hover {
     padding-top: 3rem;
     border-top: 1px solid var(--border);
     margin-top: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.app-store-badge {
+    display: block;
+    height: 40px;
+    width: auto;
 }
 
 /* ── MODAL ── */
