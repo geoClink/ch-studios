@@ -38,6 +38,24 @@
                 <h2>Design-Forward Apps</h2>
                 <p>Software that looks as good as it works. We sweat the details so your users notice.</p>
             </div>
+
+            <div class="service" onclick="openModal('maintenance')">
+                <h2>App & Website Maintenance</h2>
+                <p> Already have an app or website? We keep it running, updated and improving so you can focus on your
+                    business.</p>
+            </div>
+
+            <div class="service" onclick="openModal('mvp')">
+                <h2>Prototype & MVP Development</h2>
+                <p>Turn your idea into a working product fast. We build lean, functional first versions so you can
+                    validate before you invest.</p>
+            </div>
+
+            <div class="service" onclick="openModal('backend')">
+                <h2>API & Backend Development</h2>
+                <p>Need a solid backend? We build and integrate APIs, databases, and server infrastructure that your
+                    product can grow on.</p>
+            </div>
         </div>
 
         <a href="contact.html" class="btn-primary">Let's Connect</a>
@@ -94,6 +112,60 @@
                 <li>Polished UI with attention to detail</li>
             </ul>
             <a href="contact.html" class="btn-primary">Let's Connect</a>
+        </div>
+    </div>
+
+    <!-- Maintenance -->
+    <div class="modal" id="modal-maintenance">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('maintenance')">x</button>
+            <h2>App & Website Maintenance</h2>
+            <p>Launching is just the beginning. We offer ongoing support for existing iOS apps and websites — whether
+                you built it with us or somewhere else.</p>
+            <ul class="stack-list">
+                <li>Bug fixes and performance improvements</li>
+                <li>iOS and OS version compatibility updates</li>
+                <li>New feature additions and iterations</li>
+                <li>Website content updates and redesigns</li>
+                <li>App Store submission and review management</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Connect</a>
+        </div>
+
+        <!-- MVP Modal -->
+        <div class="modal" id="modal-mvp">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('mvp')">✕</button>
+                <h2>Prototype & MVP Development</h2>
+                <p>Every great product starts with a first version. We help founders and businesses get to a working,
+                    testable product quickly — without overbuilding before you know what works.</p>
+                <ul class="stack-list">
+                    <li>Rapid prototyping and wireframing</li>
+                    <li>Functional iOS MVP development</li>
+                    <li>TestFlight deployment for user testing</li>
+                    <li>Iteration based on real user feedback</li>
+                    <li>Clear path from MVP to full product</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Let's Talk</a>
+            </div>
+        </div>
+
+        <!-- Backend Modal -->
+        <div class="modal" id="modal-backend">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('backend')">✕</button>
+                <h2>API & Backend Development</h2>
+                <p>A great app needs a great foundation. We build clean, scalable backends that power your product —
+                    from database architecture to live API integrations.</p>
+                <ul class="stack-list">
+                    <li>FastAPI & Python backend development</li>
+                    <li>REST API design and documentation</li>
+                    <li>Database architecture and optimization</li>
+                    <li>Third-party API integration</li>
+                    <li>Supabase and Firebase setup</li>
+                </ul>
+                <a href="contact.html" class="btn-primary">Let's Talk</a>
+            </div>
         </div>
     </div>
 
