@@ -23,44 +23,41 @@
 
     <section id="about">
         <h1>About CH Studios</h1>
-        <p> A Detroit-based software studio crafting mobile apps and full stack products.</p>
+        <p>A Detroit-based software studio crafting mobile apps and full stack products.</p>
 
         <p class="founding-story">We were both new to coding when we met at the Apple Developer Academy. We got randomly
-            assigned to a project together, worked well, and just kept choosing to work with each other. When a client needed an LLC
-            to pay us for services, we stopped being classmates and became a studio. That was the moment CH Studios was born — not
-            from a business plan, but from good work and the right opportunity.</p>
+            assigned to a project together, worked well, and just kept choosing to work with each other. When a client
+            needed an LLC to pay us for services, we stopped being classmates and became a studio. That was the moment
+            CH Studios was born — not from a business plan, but from good work and the right opportunity.</p>
 
         <div class="team-grid">
+
             <div class="member" onclick="openModal('george')">
                 <img src="images/team/george-headshot.png" alt="George Clinkscales Jr.">
                 <h2>George Clinkscales Jr.</h2>
                 <p>iOS & Full-Stack Engineer</p>
                 <div class="member-links">
-                    <a href="https://linkedin.com/in/george-clinkscales" target="_blank" rel="noopener noreferrer"
-                        onclick="event.stopPropagation()">LinkedIn</a>
-                    <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer"
-                        onclick="event.stopPropagation()"">GitHub</a>
-                    <a href=" https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer"
-                        onclick="event.stopPropagation()">Portfolio</a>
-
+                    <a href="https://linkedin.com/in/george-clinkscales" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">LinkedIn</a>
+                    <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">GitHub</a>
+                    <a href="https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Portfolio</a>
                 </div>
             </div>
 
-            <div class="member">
+            <div class="member" onclick="openModal('jaiden')">
                 <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley">
                 <h2>Jaiden Henley</h2>
-                <p>iOS & Full Stack Engineer</p>
+                <p>iOS & Full-Stack Engineer</p>
                 <div class="member-links">
-                    <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank"
-                        rel="noopener noreferrer">LinkedIn</a>
-                    <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank"
-                        rel="noopener noreferrer">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">LinkedIn</a>
+                    <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">GitHub</a>
+                    <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Portfolio</a>
                 </div>
             </div>
+
         </div>
     </section>
 
+    <!-- George Modal -->
     <div class="modal" id="modal-george">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('george')">✕</button>
@@ -75,17 +72,39 @@
                 currency converter, and support for 8 languages.</p>
             <div class="modal-details">
                 <span>🎓 Apple Developer Academy — Graduating May 2026</span>
-                <span>📱 <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City
-                        Passport — View on App Store</a></span>
+                <span>📱 <a href="https://apps.apple.com/us/app/stamped-a-city-passport/id6759680336" target="_blank" rel="noopener noreferrer">Stamped! A City Passport — View on App Store</a></span>
             </div>
             <div class="member-links">
-                <a href="https://linkedin.com/in/george-clinkscales" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://linkedin.com/in/george-clinkscales" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/geoClink" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://geoclink.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
             </div>
         </div>
     </div>
+
+    <!-- Jaiden Modal -->
+    <div class="modal" id="modal-jaiden">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('jaiden')">✕</button>
+            <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley" class="modal-headshot">
+            <h2>Jaiden Henley</h2>
+            <p class="modal-role">iOS & Full-Stack Engineer · Co-Founder</p>
+            <p>I'm a Detroit native and Apple Developer Academy graduate who builds across the full stack — SwiftUI
+                interfaces, Python backends, and CoreML models. I care about shipping software that feels native to the
+                platform, not just functional. My app QuickStudy is live on the App Store, using on-device Apple
+                Intelligence and Apple's Vision framework to turn notes and photos into study flashcards instantly.</p>
+            <div class="modal-details">
+                <span>🎓 Apple Developer Academy — Graduating May 2026</span>
+                <span>📱 <a href="https://apps.apple.com/us/app/quickstudy-flashcard-tool/id6759993537" target="_blank" rel="noopener noreferrer">QuickStudy — View on App Store</a></span>
+            </div>
+            <div class="member-links">
+                <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 CH Studios. Detroit, MI.</p>
     </footer>
