@@ -43,14 +43,19 @@ const heroText = "A Detroit-based software studio crafting mobile apps and full 
 const heroH1 = document.querySelector('#hero h1');
 
 if (heroH1) {
-    heroH1.textContent = '';
-    let i = 0;
-    const type = () => {
-        if (i < heroText.length) {
-            heroH1.textContent += heroText[i];
-            i++;
-            setTimeout(type, 30);
-        }
-    };
-    type();
+    if (!sessionStorage.getItem('typed')) {
+        heroH1.textContent = '';
+        let i = 0;
+        const type = () => {
+            if (i < heroText.length) {
+                heroH1.textContent += heroText[i];
+                i++;
+                setTimeout(type,30);
+            } else {
+                sessionStorage.setItem('typed', 'true');
+            }
+        };
+        type()
+    }
 }
+
