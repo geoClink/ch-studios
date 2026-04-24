@@ -362,8 +362,8 @@ footer {
 
 /* ── MEMBER MODAL ── */
 .modal-headshot {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
@@ -372,6 +372,10 @@ footer {
 .modal-content p {
     font-size: 0.9rem;
     line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 0.9rem;
 }
 
 .modal-role {
@@ -387,15 +391,17 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 1rem;
     border: 1px solid var(--border);
     border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 1 rem 1.25rem;
 }
 
 .modal-details span {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
+    white-space: nowrap;
 }
 
 .modal-content .btn-primary {
@@ -594,19 +600,16 @@ form button:hover {
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 2.5rem;
-    max-width: 550px;
+    max-width: 480px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
 }
 
-.modal-content p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+.modal-details {
+    padding: 1rem;
 }
-
 
 .modal-close {
     position: absolute;
@@ -706,7 +709,7 @@ form button:hover {
     /* Services */
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(2. 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-bottom: 3rem;
     }
