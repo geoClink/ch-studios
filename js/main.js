@@ -59,3 +59,38 @@ if (heroH1) {
     }
 }
 
+const testimonials = [
+    {
+        quote: `"George showed a deep commitment to both the vision and the details, consistently stepping up to solve problems and strengthen the foundation of our MVP."`,
+        author: "- We Change Community Consulting"
+    },
+    {
+        quote: `"The team at CH Studios delivered our full-stack product ahead of schedule and with a level of polish we didn't think was possible for an MVP."`,
+        author: "- Detroit Tech Collective"
+    },
+    {
+       quote: `"Incredible attention to detail. They didn't just build what we asked for; they built what we actually needed."`,
+        author: "- North End Creative"
+    },
+];
+
+let currentIndex = 0;
+const quoteElement = document.getElementById('quote-text');
+const authorElement = document.getElementById('quote-author');
+
+function updateQuote() {
+    quoteElement.style.opacity = 0;
+    authorElement.style.opacity = 0;
+
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+
+        quoteElement.textContent = testimonials[currentIndex].quote;
+        authorElement.textContent = testimonials[currentIndex].author;
+
+        quoteElement.style.opacity = 1;
+        authorElement.style.opacity = 1;
+    }, 500);
+}
+
+setInterval(updateQuote, 5000);

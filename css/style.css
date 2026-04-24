@@ -191,7 +191,7 @@ footer {
     color: var(--text);
     border-radius: 4px;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-decoration: none;   /* Essential for <a> tags */
@@ -771,4 +771,17 @@ form button:hover {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ── SCROLL TESTIMONIALS ── */
+.testimonial-quote, .testimonial-author {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+#testimonial {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
