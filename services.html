@@ -30,9 +30,10 @@
             </div>
 
             <div class="service" onclick="openModal('game_development')">
-    <h2>iOS Game Development</h2>
-    <p>Premium mobile experiences built natively for iPhone and iPad. Optimized for Apple Silicon and Metal performance.</p>
-</div>
+                <h2>iOS Game Development</h2>
+                <p>Premium mobile experiences built natively for iPhone and iPad. Optimized for Apple Silicon and Metal
+                    performance.</p>
+            </div>
 
             <div class="service" onclick="openModal('design')">
                 <h2>Design-Forward Apps</h2>
@@ -65,10 +66,9 @@
 
 
     <!-- iOS Modal -->
-
     <div class="modal" id="modal-ios">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('ios')">x</button>
+            <button class="modal-close" onclick="closeModal('ios')">✕</button>
             <h2>iOS & Mobile</h2>
             <p>We build native iOS apps using SwiftUI and Swift — from initial concept through TestFlight testing to App
                 Store submission.</p>
@@ -84,19 +84,22 @@
 
     <!-- Mobile Game Development -->
     <div class="modal" id="modal-game_development">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('game_development')">✕</button>
-        <h2>iOS Game Development</h2>
-        <p>Specializing in high-fidelity games designed specifically for the Apple ecosystem. I leverage Apple's latest hardware and software features to create seamless, immersive gameplay.</p>
-        <ul class="stack-list">
-            <li><strong>SwiftUI & SpriteKit</strong> — Native frameworks for lightning-fast 2D games</li>
-            <li><strong>Game Center Integration</strong> — Leaderboards, achievements, and multiplayer</li>
-            <li><strong>Metal Performance</strong> — Optimized graphics for the latest A-series and M-series chips</li>
-            <li><strong>Haptic Engine</strong> — Immersive tactile feedback designed for iPhone</li>
-        </ul>
-        <a href="contact.html" class="btn-primary">Build My iOS Game</a>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('game_development')">✕</button>
+            <h2>iOS Game Development</h2>
+            <p>Specializing in high-fidelity games designed specifically for the Apple ecosystem. We leverage Apple's
+                latest hardware and software features to create seamless, immersive gameplay.</p>
+            <ul class="stack-list">
+                <li><strong>SwiftUI & SpriteKit</strong> — Native frameworks for lightning-fast 2D games</li>
+                <li><strong>Game Center Integration</strong> — Leaderboards, achievements, and multiplayer</li>
+                <li><strong>Metal Performance</strong> — Optimized graphics for the latest A-series and M-series chips
+                </li>
+                <li><strong>Haptic Engine</strong> — Immersive tactile feedback designed for iPhone</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Build My iOS Game</a>
+        </div>
     </div>
-</div>
+
     <!-- Design Modal -->
     <div class="modal" id="modal-design">
         <div class="modal-content">
@@ -114,10 +117,10 @@
         </div>
     </div>
 
-    <!-- Maintenance -->
+    <!-- Maintenance Modal-->
     <div class="modal" id="modal-maintenance">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('maintenance')">x</button>
+            <button class="modal-close" onclick="closeModal('maintenance')">✕</button>
             <h2>App & Website Maintenance</h2>
             <p>Launching is just the beginning. We offer ongoing support for existing iOS apps and websites — whether
                 you built it with us or somewhere else.</p>
@@ -130,43 +133,44 @@
             </ul>
             <a href="contact.html" class="btn-primary">Let's Connect</a>
         </div>
+    </div>
 
-        <!-- MVP Modal -->
-        <div class="modal" id="modal-mvp">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal('mvp')">✕</button>
-                <h2>Prototype & MVP Development</h2>
-                <p>Every great product starts with a first version. We help founders and businesses get to a working,
-                    testable product quickly — without overbuilding before you know what works.</p>
-                <ul class="stack-list">
-                    <li>Rapid prototyping and wireframing</li>
-                    <li>Functional iOS MVP development</li>
-                    <li>TestFlight deployment for user testing</li>
-                    <li>Iteration based on real user feedback</li>
-                    <li>Clear path from MVP to full product</li>
-                </ul>
-                <a href="contact.html" class="btn-primary">Let's Talk</a>
-            </div>
-        </div>
-
-        <!-- Backend Modal -->
-        <div class="modal" id="modal-backend">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal('backend')">✕</button>
-                <h2>API & Backend Development</h2>
-                <p>A great app needs a great foundation. We build clean, scalable backends that power your product —
-                    from database architecture to live API integrations.</p>
-                <ul class="stack-list">
-                    <li>FastAPI & Python backend development</li>
-                    <li>REST API design and documentation</li>
-                    <li>Database architecture and optimization</li>
-                    <li>Third-party API integration</li>
-                    <li>Supabase and Firebase setup</li>
-                </ul>
-                <a href="contact.html" class="btn-primary">Let's Talk</a>
-            </div>
+    <!-- MVP Modal -->
+    <div class="modal" id="modal-mvp">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('mvp')">✕</button>
+            <h2>Prototype & MVP Development</h2>
+            <p>Every great product starts with a first version. We help founders and businesses get to a working,
+                testable product quickly — without overbuilding before you know what works.</p>
+            <ul class="stack-list">
+                <li>Rapid prototyping and wireframing</li>
+                <li>Functional iOS MVP development</li>
+                <li>TestFlight deployment for user testing</li>
+                <li>Iteration based on real user feedback</li>
+                <li>Clear path from MVP to full product</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Talk</a>
         </div>
     </div>
+
+    <!-- Backend Modal -->
+    <div class="modal" id="modal-backend">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('backend')">✕</button>
+            <h2>API & Backend Development</h2>
+            <p>A great app needs a great foundation. We build clean, scalable backends that power your product —
+                from database architecture to live API integrations.</p>
+            <ul class="stack-list">
+                <li>FastAPI & Python backend development</li>
+                <li>REST API design and documentation</li>
+                <li>Database architecture and optimization</li>
+                <li>Third-party API integration</li>
+                <li>Supabase and Firebase setup</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Talk</a>
+        </div>
+    </div>
+
 
     <footer>
         <p>© 2026 CH Studios. Detroit, MI.</p>

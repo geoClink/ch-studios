@@ -61,16 +61,16 @@ if (heroH1) {
 
 const testimonials = [
     {
-        quote: `"George showed a deep commitment to both the vision and the details, consistently stepping up to solve problems and strengthen the foundation of our MVP."`,
-        author: "- We Change Community Consulting"
+        quote: `"Sample quote."`,
+        author: "- Sample Author"
     },
     {
-        quote: `"The team at CH Studios delivered our full-stack product ahead of schedule and with a level of polish we didn't think was possible for an MVP."`,
-        author: "- Detroit Tech Collective"
+        quote: `"Sample quote."`,
+        author: "- Sample Author"
     },
     {
-       quote: `"Incredible attention to detail. They didn't just build what we asked for; they built what we actually needed."`,
-        author: "- North End Creative"
+       quote: `"Sample quote."`,
+        author: "- Sample Author"
     },
 ];
 
