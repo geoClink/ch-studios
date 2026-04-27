@@ -406,14 +406,15 @@ footer {
     border: 1px solid var(--border);
     border-radius: 4px;
     margin-bottom: 1.5rem;
-    padding: 1 rem 1.25rem;
+    padding: 1rem 1.25rem;
 }
 
 .modal-details span {
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
-    white-space: nowrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .modal-content .btn-primary {
@@ -734,7 +735,7 @@ form button:hover {
     /* Services */
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1.5rem;
         margin-bottom: 3rem;
     }
