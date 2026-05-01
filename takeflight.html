@@ -4,9 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TakeFlight - CH Studios</title>
+    <title>TakeFlight — A Bird Life - CH Studios</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description" content="TakeFlight is a survival simulation game where you play as a bird on Detroit's Belle Isle. Built by CH Studios for the Apple Developer Academy — live on the App Store.">
+    <meta property="og:title" content="TakeFlight — A Bird Life | CH Studios">
+    <meta property="og:description" content="TakeFlight is a survival simulation game where you play as a bird on Detroit's Belle Isle. Built by CH Studios for the Apple Developer Academy — live on the App Store.">
+    <meta property="og:url" content="https://geoclink.github.io/ch-studios/takeflight.html">
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .minigame-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .minigame-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+        .minigame-card:hover { border-color: var(--accent); }
+        .minigame-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+        .minigame-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        .arch-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+        .arch-table th {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .arch-table td {
+            padding: 0.7rem 1rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .arch-table td:first-child {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text);
+            white-space: nowrap;
+        }
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+        .contrib-list li strong { color: var(--text); }
+        @media (max-width: 768px) {
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .minigame-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
@@ -25,69 +156,145 @@
         <div class="case-header">
             <a href="work.html" class="back-link">← Back to Work</a>
             <h1>TakeFlight — A Bird Life</h1>
-            <p class="client">CH Studios · Apple Developer Academy Challenge</p>
-            <span class="tech-stack">SwiftUI · SpriteKit · SwiftData · GameKit · CoreMotion · GameController</span>
+            <p class="client">CH Studios · Apple Developer Academy Challenge · Team of 5</p>
+
+            <div class="badge-row">
+                <span class="badge badge-accent">Live on App Store</span>
+                <span class="badge">SwiftUI</span>
+                <span class="badge">SpriteKit</span>
+                <span class="badge">SwiftData</span>
+                <span class="badge">GameKit</span>
+                <span class="badge">GameController</span>
+                <span class="badge">CoreMotion</span>
+                <span class="badge">AVFoundation</span>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-block">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Minigames</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Achievements</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Scene Extensions</span>
+                </div>
+                <div class="stat-block">
+                    <span class="stat-number">8k×5k</span>
+                    <span class="stat-label">World Size (pts)</span>
+                </div>
+            </div>
         </div>
 
         <div class="case-body">
 
             <div class="case-block">
                 <h2>Overview</h2>
-                <p>Take Flight is a survival simulation game where you play as a bird trying to live a full life. Manage hunger, avoid predators, collect nest materials, find a mate, hatch and raise baby birds, and ultimately escape the island. Built as an Apple Developer Academy challenge, it features a complete game loop across a large open world with multiple interconnected systems running simultaneously.</p>
+                <p>TakeFlight is a survival simulation game where you play as a bird trying to live a full life on Belle Isle in Detroit. Manage hunger, avoid predators, collect nest materials, find a mate, hatch and raise baby birds, and ultimately escape the island. Built as an Apple Developer Academy challenge by a team of 5 — two engineers, two designers, and a project manager — it features a complete open-world game loop with five minigames running across interconnected systems. It's live on the App Store.</p>
             </div>
 
             <div class="case-block">
                 <h2>The Challenge</h2>
-                <p>Games are among the most technically complex iOS apps to build. The Academy challenge required delivering a polished, complete product under time pressure. The team chose to build a game with real physics, persistent state, real-time AI, multiple minigame scenes, Game Center achievements, sound, haptics, and a full tutorial system — all working together without breaking.</p>
+                <p>Games are among the most technically complex iOS apps to build. The Academy challenge required a complete, polished product under time pressure, with a cross-functional team working across engineering and design simultaneously. The engineering challenge was building five distinct minigame scenes — each with their own physics, timers, and input modes — that could transition seamlessly in and out of a single persistent open world without losing game state.</p>
             </div>
 
             <div class="case-block">
-                <h2>What We Built</h2>
-                <p>The game world is an 8000x5000 point open map with a smooth exponential-damping camera system, player-clamped boundaries, and a full map mode. The player manages three status bars — hunger, predator proximity, and baby count — all draining or updating in real time. Predators patrol the world on randomized movement paths and trigger a reaction minigame on contact. Collecting materials, building a nest, finding a mate, and raising babies each trigger their own fully animated SpriteKit minigame scenes with onboarding flows, timers, physics, and haptic feedback. The final escape triggers a Flappy Bird-style obstacle course with a 15-second countdown and a Game Center achievement on completion.</p>
+                <h2>The Team</h2>
+                <table class="arch-table">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Name</th>
+                            <th>Responsibilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>iOS Engineer</td><td>George Clinkscales Jr.</td><td>Hunger system, HUD components, item pickup and respawn, draining bar views, ViewModel bridge</td></tr>
+                        <tr><td>iOS Engineer</td><td>Jaiden Henley</td><td>SpriteKit architecture, all minigame scenes, predator AI, camera system, GameKit achievements, SwiftData persistence</td></tr>
+                        <tr><td>UI/UX Designer</td><td>Dorien Harris</td><td>Visual design, art direction, UI components</td></tr>
+                        <tr><td>UI/UX Designer</td><td>Zoe Talley</td><td>Visual design, asset creation, UX flow</td></tr>
+                        <tr><td>Project Manager</td><td>Ashlee Cunningham</td><td>Sprint planning, team coordination, delivery</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="case-block">
-                <h2>Our Role</h2>
-                <p>CH Studios contributed across the full codebase. George owned the hunger bar system, item pickup and respawn logic, and the draining HUD components. Jaiden led the core SpriteKit architecture, all minigame scenes, the GameKit achievement system, the predator AI, the male bird wandering behavior, the camera system, and the SwiftData persistence layer. The two worked together on the ViewModel bridge, scene transition system, and tutorial flow.</p>
+                <h2>Engineering Contributions</h2>
+                <ul class="contrib-list">
+                    <li><strong>SpriteKit architecture split across 15 extension files.</strong> Each file owns one concern — camera, animation, baby, nest, predator, transitions, map, items, contacts. Avoided a monolithic scene class by organizing every system into its own focused extension.</li>
+                    <li><strong>Exponential-damping camera system.</strong> Frame-rate independent camera follow using the formula 1 - exp(-stiffness × deltaTime). Includes a 20-point dead zone to eliminate jitter on small movements and boundary clamping to keep the camera inside the map.</li>
+                    <li><strong>Per-nest independent baby timer system.</strong> Each nest stores its own spawn timestamp in SpriteKit userData. The update loop reads each nest's timer independently so multiple nests can coexist with different hunger percentages simultaneously.</li>
+                    <li><strong>SwiftData full game persistence.</strong> Player position, camera position, nest location, baby state, inventory, and all gameplay flags persist across app restarts via a SwiftData GameState model. The game resumes exactly where it was left.</li>
+                    <li><strong>Predator AI with directional sprite flipping.</strong> Predators move on randomized vertical or horizontal patrol paths. Direction is tracked via per-frame position delta stored in userData and rotation is applied in didEvaluateActions — after SKAction movement is resolved — so facing direction is always accurate.</li>
+                    <li><strong>Male bird three-behavior wandering AI.</strong> Fly forward along current heading, turn at a random angle, or follow a circular UIBezierPath — chosen randomly and chained recursively via closure callbacks.</li>
+                    <li><strong>Minigame scene transition system.</strong> Each transition saves player and camera position, pauses the incoming scene, shows SwiftUI onboarding instructions, then unfreezes the scene via a closure when the user taps Start. Returning from a minigame restores the saved state and checks win conditions.</li>
+                    <li><strong>Hunger HUD and draining bar views.</strong> Frame-rate independent hunger drain using a time accumulator. Three separate draining bar components — hunger, predator proximity, and baby count — each driven by ViewModel published properties and animated independently.</li>
+                    <li><strong>Item pickup with double-tap prevention and respawn scheduling.</strong> Items are renamed immediately on pickup to prevent race conditions, then respawn at their original position after a timed SKAction sequence.</li>
+                    <li><strong>Game Center achievements.</strong> Eight achievements including building a nest, mating, raising a baby, and completing the escape. Reported via async GameKit calls with progress tracking.</li>
+                </ul>
+            </div>
+
+            <div class="case-block">
+                <h2>The Five Minigames</h2>
+                <div class="minigame-grid">
+                    <div class="minigame-card">
+                        <h3>Predator Escape</h3>
+                        <p>Timing-bar reaction game. Tap to land a moving needle in a shrinking safe zone. Failure triggers the game over screen with a terminal-aesthetic death report.</p>
+                    </div>
+                    <div class="minigame-card">
+                        <h3>Feed Yourself</h3>
+                        <p>Catch falling food while avoiding spiders. Supports three input modes: touch, keyboard arrow keys, and CoreMotion accelerometer tilt. Hunger bar refills on completion.</p>
+                    </div>
+                    <div class="minigame-card">
+                        <h3>Build a Nest</h3>
+                        <p>Memory and drag-and-drop puzzle using the four collected materials — stick, leaf, spiderweb, dandelion. Completing it places a nest at the nearest tree base in the overworld.</p>
+                    </div>
+                    <div class="minigame-card">
+                        <h3>Feed Baby Birds</h3>
+                        <p>Swipe rope physics to drop food into a moving catcher beneath each nest. Each baby has an independent 2-minute hunger timer visible as a color-coded progress bar.</p>
+                    </div>
+                    <div class="minigame-card">
+                        <h3>Leave the Island</h3>
+                        <p>Flappy Bird-style escape through obstacle gaps with a 15-second countdown. Completing it triggers the win screen, a Game Center achievement, and the end of the game loop.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="case-block">
                 <h2>Tech Stack</h2>
-                <ul class="stack-list">
-                    <li>SwiftUI — all menus, HUD overlays, status bars, inventory, and game over screens</li>
-                    <li>SpriteKit — open world game scene, physics, animations, and all five minigame scenes</li>
-                    <li>SwiftData — persistent game state across sessions including player position, nest, baby, and inventory</li>
-                    <li>GameKit — Game Center authentication and eight achievement milestones</li>
-                    <li>CoreMotion — accelerometer-based tilt input mode for the feed minigame</li>
-                    <li>GameController — keyboard and external controller support throughout</li>
-                </ul>
-            </div>
-
-            <div class="case-block">
-                <h2>Minigames</h2>
-                <ul class="stack-list">
-                    <li>Predator Escape — timing bar reaction game, tap to land needle in a safe zone</li>
-                    <li>Feed Yourself — catch falling food while avoiding spiders, supports keyboard and tilt input</li>
-                    <li>Build a Nest — memory and drag-and-drop puzzle using collected materials</li>
-                    <li>Feed Baby Birds — swipe rope physics to drop food into a moving catcher</li>
-                    <li>Leave the Island — Flappy Bird-style escape with a 15-second countdown</li>
-                </ul>
+                <table class="arch-table">
+                    <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>SwiftUI</td><td>All menus, HUD overlays, status bars, inventory, onboarding sheets, and game over screens</td></tr>
+                        <tr><td>SpriteKit</td><td>Open world scene, physics engine, all five minigame scenes, particle effects, animations</td></tr>
+                        <tr><td>SwiftData</td><td>Full game state persistence — position, inventory, nest, baby, and all gameplay flags</td></tr>
+                        <tr><td>GameKit</td><td>Game Center authentication, leaderboards, and eight achievement milestones</td></tr>
+                        <tr><td>GameController</td><td>Keyboard and external controller support for menus and minigames</td></tr>
+                        <tr><td>CoreMotion</td><td>Accelerometer tilt input for the Feed Yourself minigame</td></tr>
+                        <tr><td>AVFoundation</td><td>Spatial audio and sound effects throughout</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="case-block">
                 <h2>Outcome</h2>
-                <p>Take Flight was completed and presented as part of the Apple Developer Academy challenge program. The game features a full save and resume system, eight Game Center achievements, keyboard and controller support for iPad and Mac Catalyst, a complete tutorial system, and polished audio and haptic feedback throughout. It stands as one of the most technically complex projects we built at the Academy.</p>
+                <p>TakeFlight shipped to the App Store as part of the Apple Developer Academy challenge program. It features a full save and resume system, eight Game Center achievements, keyboard and controller support for iPad, a complete contextual tutorial system, and polished audio and haptic feedback throughout. It remains one of the most technically complex projects built during our time at the Academy — a complete game engine, five physics-based minigames, and a persistent open world, all built by two engineers under challenge time constraints.</p>
+
                 <div class="btn-group">
-                 <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" target="_blank" rel="noopener noreferrer" style="margin-top: 1rem; display: inline-block;">
-                    <img src="images/logos/app-store-light-download.svg" alt="Download on the App Store" class="app-store-badge">
-                 </a>
-                <a href="https://github.com/jaidenhenley/TakeFlight" target="_blank" rel="noopener noreferrer" class="btn-ghost">View on GitHub →</a>
+                    <a href="https://apps.apple.com/us/app/takeflight-a-bird-life/id6758803964" class="btn-primary" target="_blank" rel="noopener noreferrer">Download on App Store</a>
+                    <a href="https://github.com/jaidenhenley/TakeFlight" class="btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
 
         </div>
-
-
 
     </section>
 
@@ -96,4 +303,5 @@
     </footer>
     <script src="js/main.js"></script>
 </body>
+
 </html>
