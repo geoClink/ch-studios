@@ -61,17 +61,17 @@ if (heroH1) {
 
 const testimonials = [
     {
-        quote: `"Sample quote."`,
-        author: "- Sample Author"
+        quote: `"George walked into the Academy curious but reserved, quietly taking it all in. Since then, I’ve watched him come into his own letting that curiosity fuel real growth. Today, he’s not just a strong coder, he’s a go to resource for others. I’m proud of what he’s accomplished in seven months, and even more excited to see how far he’ll go."`,
+        author: "- Ron Marshall - Marketing Mentor, Apple Developer Academy MSU"
     },
     {
-        quote: `"Sample quote."`,
-        author: "- Sample Author"
+        quote: `"Jaiden brought a rare combination of curiosity, precision, and initiative to our MVP build. His ability to take complex ideas and translate them into clear, actionable progress made a real difference in moving this work forward."`,
+        author: "- Ashlee Cunningham - Founder, We Change Community Consulting"
     },
-    {
-       quote: `"Sample quote."`,
-        author: "- Sample Author"
-    },
+    // {
+    //    quote: `"Sample quote."`,
+    //     author: "- Sample Author"
+    // },
 ];
 
 let currentIndex = 0;

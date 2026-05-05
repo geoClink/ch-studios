@@ -228,15 +228,14 @@
             <div class="case-block">
                 <h2>Overview</h2>
                 <p>CoastCast is a full-platform iOS beach conditions app covering 54 Michigan beaches across all five
-                    Great Lakes. It aggregates real-time data from six sources — WeatherKit, NOAA buoy stations, NWS
-                    weather alerts, TomTom traffic, water quality sensors, and a holiday API — through a Python FastAPI
-                    backend, then surfaces that intelligence across the entire iOS ecosystem: in the app, on the home
-                    screen, in the Dynamic Island, and through Siri.</p>
+                    Great Lakes. It brings water temperature, beach crowd levels, weekly weather forecasts, active
+                    weather alerts, and water quality alerts (including E. coli levels) together in one place, so you
+                    can decide if a beach is worth the drive before you leave.</p>
             </div>
 
             <div class="case-block">
                 <h2>The Problem</h2>
-                <p>Michigan has some of the best freshwater beaches in the world — and no reliable way to know if
+                <p>Michigan has some of the best freshwater beaches in the world, and no reliable way to know if
                     conditions are worth the drive. Weather apps don't show water temperature or wave height. Beach
                     websites are outdated. There's no way to know how crowded a beach will be before you arrive.
                     CoastCast was built to answer one question in under 30 seconds: <em>is it worth going to the beach
@@ -246,7 +245,7 @@
             <div class="case-block">
                 <h2>The Solution</h2>
                 <p>A full-platform iOS app that brings every piece of beach intelligence together and surfaces it
-                    wherever the user is — in the app, on a home screen widget, in the Dynamic Island while driving, or
+                    wherever the user is, in the app, on a home screen widget, in the Dynamic Island while driving, or
                     through a Siri voice request without ever opening the app. An on-device CoreML model predicts crowd
                     levels with zero latency and no internet required.</p>
             </div>
@@ -254,16 +253,14 @@
             <div class="case-block">
                 <h2>Our Role</h2>
                 <p>CH Studios owned the full product: Python FastAPI backend, CoreML model training and integration,
-                    SwiftUI frontend, and all native iOS platform integrations. George led the SwiftUI side — map
-                    architecture, scoring algorithm, App Intents, WidgetKit, Live Activities, and notifications. Jaiden
-                    led the backend and CoreML pipeline.</p>
+                    SwiftUI frontend, and all native iOS platform integrations</p>
             </div>
 
             <div class="case-block">
                 <h2>Key Contributions</h2>
                 <ul class="contrib-list">
                     <li><strong>Map clustering algorithm.</strong> Built a grid-based spatial bucketing system from
-                        scratch — no third-party library. Grid size scales dynamically with zoom level so clusters stay
+                        scratch, no third-party library. Grid size scales dynamically with zoom level so clusters stay
                         proportional at any altitude.</li>
                     <li><strong>Beach scoring engine.</strong> Weighted algorithm evaluates temperature, wind,
                         precipitation, UV index, proximity, crowd tolerance, and favorites status to rank suggestions
@@ -271,7 +268,7 @@
                     <li><strong>CoreML crowd prediction.</strong> Trained an XGBoost classifier on 40 years of state
                         park attendance data. Built the Swift-side feature engineering pipeline including cyclical month
                         encoding, historical water temp fallback, and peak summer detection. Runs fully on-device.</li>
-                    <li><strong>App Intents and Siri.</strong> Two custom intents — one opens a beach in the app, one
+                    <li><strong>App Intents and Siri.</strong> Two custom intents, one opens a beach in the app, one
                         fetches live conditions and speaks them back through Siri without opening the app at all.</li>
                     <li><strong>WidgetKit and Live Activities.</strong> Configurable home screen widget in small and
                         medium sizes with 30-minute refresh. Dynamic Island tracker showing crowd level, water temp, and
@@ -323,7 +320,7 @@
                         <tr>
                             <td>Crowd ML</td>
                             <td>CoreML (XGBoost)</td>
-                            <td>On-device — low, moderate, busy</td>
+                            <td>On-device, low, moderate, busy</td>
                         </tr>
                         <tr>
                             <td>Persistence</td>
@@ -364,12 +361,12 @@
                     </div>
                     <div class="feature-card">
                         <h3>Smart Map</h3>
-                        <p>Hand-built clustering algorithm — no library. Shows beach counts zoomed out, individual pins
+                        <p>Hand-built clustering algorithm, no library. Shows beach counts zoomed out, individual pins
                             zoomed in. Real-time card strip updates as the user pans across Michigan.</p>
                     </div>
                     <div class="feature-card">
                         <h3>Siri Shortcuts</h3>
-                        <p>Two App Intents. Ask Siri for conditions at any of 54 beaches — it fetches live data and
+                        <p>Two App Intents. Ask Siri for conditions at any of 54 beaches, it fetches live data and
                             speaks results without opening the app.</p>
                     </div>
                     <div class="feature-card">
@@ -379,7 +376,7 @@
                     </div>
                     <div class="feature-card">
                         <h3>Home Screen Widget</h3>
-                        <p>Configurable WidgetKit widget — users pin their favorite beach and see live conditions
+                        <p>Configurable WidgetKit widget, users pin their favorite beach and see live conditions
                             without unlocking their phone. Refreshes every 30 minutes.</p>
                     </div>
                     <div class="feature-card">
@@ -393,16 +390,16 @@
             <div class="case-block">
                 <h2>Tech Stack</h2>
                 <ul class="stack-list">
-                    <li>SwiftUI — full iOS frontend with NavigationStack and adaptive layouts</li>
-                    <li>Swift Concurrency — async let parallel fetching, TaskGroup for concurrent WeatherKit calls</li>
-                    <li>WeatherKit — current conditions, 10-day forecast, hourly forecast</li>
-                    <li>CoreML — on-device XGBoost crowd prediction, 12 engineered features</li>
-                    <li>MapKit — custom clustering algorithm, real-time region filtering</li>
-                    <li>WidgetKit + ActivityKit — home screen widgets and Dynamic Island Live Activities</li>
-                    <li>App Intents — Siri Shortcuts with AppEntity beach search</li>
-                    <li>UserNotifications + BGTaskScheduler — three-tier smart notifications</li>
-                    <li>SwiftData — favorites and user preference persistence</li>
-                    <li>Python FastAPI — backend aggregating six live data sources, deployed on Render</li>
+                    <li>SwiftUI, full iOS frontend with NavigationStack and adaptive layouts</li>
+                    <li>Swift Concurrency, async let parallel fetching, TaskGroup for concurrent WeatherKit calls</li>
+                    <li>WeatherKit, current conditions, 10-day forecast, hourly forecast</li>
+                    <li>CoreML, on-device XGBoost crowd prediction, 12 engineered features</li>
+                    <li>MapKit, custom clustering algorithm, real-time region filtering</li>
+                    <li>WidgetKit + ActivityKit, home screen widgets and Dynamic Island Live Activities</li>
+                    <li>App Intents, Siri Shortcuts with AppEntity beach search</li>
+                    <li>UserNotifications + BGTaskScheduler, three-tier smart notifications</li>
+                    <li>SwiftData, favorites and user preference persistence</li>
+                    <li>Python FastAPI, backend aggregating six live data sources, deployed on Render</li>
                 </ul>
             </div>
 
@@ -410,7 +407,7 @@
                 <h2>Outcome</h2>
                 <p>CoastCast is live on TestFlight and in active development. On-device ML inference eliminated backend
                     compute costs for crowd prediction entirely. The app surfaces beach intelligence across every
-                    surface of the iPhone — no open required. Full App Store release planned for summer 2026.</p>
+                    surface of the iPhone, no open required. Full App Store release planned for May 2026.</p>
             </div>
 
         </div>

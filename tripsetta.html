@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripsetta - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="CH Studios maintains the Tripsetta iOS, Android, and web platform, implementing user-driven improvements and resolving bugs across all three codebases.">
+    <meta property="og:title" content="Tripsetta | CH Studios">
+    <meta property="og:description"
+        content="CH Studios maintains the Tripsetta iOS, Android, and web platform, implementing user-driven improvements and resolving bugs across all three codebases.">
+    <meta property="og:url" content="https://geoclink.github.io/ch-studios/tripsetta.html">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+
+        .contrib-list li strong {
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .stat-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="work.html" class="back-link">← Back to Work</a>
+                <h1>Tripsetta</h1>
+                <p class="client">CH Studios · Maintenance & Support · Cross-Platform</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Active Maintenance</span>
+                    <span class="badge">iOS</span>
+                    <span class="badge">Android</span>
+                    <span class="badge">Web</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Platforms</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Owner Team</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Engineers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>Tripsetta's founder built all three versions of the app (iOS, Android, and web) solo. As the
+                        product grew, keeping up with maintenance, bug fixes, and user-driven improvements across three
+                        platforms became unmanageable for one person. CH Studios was brought on as the engineering
+                        partner to take over ongoing maintenance and ensure the product could continue to evolve.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Our Role</h2>
+                    <p>We work directly with the owner, translating user feedback into concrete improvements across all
+                        three platforms. Our day-to-day work includes diagnosing and patching bugs reported by real
+                        users, shipping incremental improvements, and keeping the codebase stable as the product
+                        matures.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>What We Handle</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Bug Fixes:</strong> Identify and resolve issues surfaced by real user reports across
+                            iOS, Android, and web.</li>
+                        <li><strong>User-Driven Updates:</strong> Translate owner and user feedback into targeted
+                            improvements, shipped consistently across all platforms.</li>
+                        <li><strong>Cross-Platform Maintenance:</strong> Keep three separate codebases stable and in
+                            sync as the product evolves.</li>
+                        <li><strong>Ongoing Partnership:</strong> Act as a long-term engineering resource so the founder
+                            can focus on product direction rather than code.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://tripsetta.com/" class="btn-primary" target="_blank"
+                        rel="noopener noreferrer">Visit Website</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

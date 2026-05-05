@@ -536,6 +536,18 @@ form button:hover {
     text-decoration: none;
 }
 
+.case-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.case-link:hover {
+    text-decoration: underline;
+}
+
 .case-header h1 {
     font-family: var(--font-mono);
     font-size: 3rem;
