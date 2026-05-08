@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoastCast Privacy Policy - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="CoastCast privacy policy. Learn what data CoastCast collects, how it is used, and how your location is handled.">
+    <meta property="og:title" content="CoastCast Privacy Policy | CH Studios">
+    <meta property="og:url" content="https://geoclink.github.io/ch-studios/coastcast-privacy.html">
+
+    <style>
+        .privacy-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .privacy-block h2 {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .privacy-block p,
+        .privacy-block li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .privacy-block ul {
+            padding-left: 1.25rem;
+            margin: 0.5rem 0;
+        }
+
+        .privacy-block ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .privacy-meta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="privacy">
+
+            <div class="case-header">
+                <a href="coastcast.html" class="back-link">← Back to CoastCast</a>
+                <h1>Privacy Policy</h1>
+                <p class="client">CoastCast · CH Studios</p>
+                <p class="privacy-meta">Last updated: May 2026</p>
+            </div>
+
+            <div class="case-body">
+
+                <div class="privacy-block">
+                    <h2>Overview</h2>
+                    <p>CoastCast is built around one goal: helping you decide if a beach is worth the drive. To do
+                        that well, we need to know where you are. This page explains exactly what we collect, why we
+                        collect it, and what we never do with it.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Location</h2>
+                    <p>CoastCast requests access to your device's location. We use it to:</p>
+                    <ul>
+                        <li>Sort beaches by distance from where you are right now</li>
+                        <li>Show nearby beaches on the map when you first open it</li>
+                        <li>Power the beach scoring engine so suggestions reflect how far you'd actually have to drive</li>
+                        <li>Update your home screen widget with conditions at the beach nearest to you</li>
+                    </ul>
+                    <p>Your location is used on-device to calculate distances. It is never stored on our servers, never
+                        tied to your identity, and never shared with any third party for advertising or analytics
+                        purposes.</p>
+                    <p>When CoastCast fetches weather data through Apple's WeatherKit, your location is passed to
+                        Apple's servers per
+                        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's
+                            Privacy Policy</a>. We do not control or store what Apple receives.
+                    </p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Data We Collect</h2>
+                    <p>CoastCast collects only what it needs to function:</p>
+                    <ul>
+                        <li><strong>Location</strong> — used on-device to sort and suggest beaches. Never stored.</li>
+                        <li><strong>Favorites and preferences</strong> — stored only on your device using SwiftData. We
+                            never see or sync this data.</li>
+                        <li><strong>Notification settings</strong> — stored locally. We do not track whether you open or
+                            dismiss notifications.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Data We Do Not Collect</h2>
+                    <ul>
+                        <li>We do not collect your name, email address, or any account information. CoastCast has no
+                            sign-in.</li>
+                        <li>We do not use any third-party analytics or crash reporting SDKs.</li>
+                        <li>We do not track your behavior inside the app.</li>
+                        <li>We do not sell or share your data with advertisers.</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>On-Device Machine Learning</h2>
+                    <p>Crowd level predictions are generated entirely on your device using a CoreML model. No data
+                        leaves your phone for this feature. The model runs locally, produces a result locally, and
+                        nothing is sent to our servers.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Backend and Third-Party Data Sources</h2>
+                    <p>CoastCast's FastAPI backend fetches live data from several public sources on your behalf:
+                        NOAA buoys, National Weather Service, water quality monitors, and TomTom traffic. When your
+                        app makes a request to our backend, we receive a standard server log entry (timestamp, request
+                        path, IP address). We use these logs only for debugging and uptime monitoring. We do not log
+                        or store your location as part of these requests.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Notifications</h2>
+                    <p>If you enable notifications, CoastCast can send you daily beach recommendations, score threshold
+                        alerts for your favorites, and severe weather warnings. These are generated on your device
+                        using data fetched during background refresh. We do not use a third-party push notification
+                        service and do not store a device token on our servers.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Children's Privacy</h2>
+                    <p>CoastCast is not directed at children under 13 and we do not knowingly collect personal
+                        information from children.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Changes to This Policy</h2>
+                    <p>If we make material changes to this policy, we will update the date at the top of this page.
+                        We encourage you to check back periodically.</p>
+                </div>
+
+                <div class="privacy-block">
+                    <h2>Contact</h2>
+                    <p>Questions about this policy? Reach us through the <a href="contact.html">contact page</a>.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

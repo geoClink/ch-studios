@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoastCast Support - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="Support and FAQ for CoastCast, the iOS beach conditions app for Michigan's Great Lakes beaches. Get help with location, notifications, and more.">
+    <meta property="og:title" content="CoastCast Support | CH Studios">
+    <meta property="og:description"
+        content="Support and FAQ for CoastCast, the iOS beach conditions app for Michigan's Great Lakes beaches.">
+    <meta property="og:url" content="https://geoclink.github.io/ch-studios/coastcast-support.html">
+
+    <style>
+        .app-hero {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem 0 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            background-color: var(--surface);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .app-hero-text h1 {
+            margin-bottom: 0.3rem;
+        }
+
+        .app-hero-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .support-block h2 {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+            counter-reset: steps;
+        }
+
+        .steps-list li {
+            counter-increment: steps;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            padding-left: 1.75rem;
+            position: relative;
+            margin-bottom: 0.3rem;
+        }
+
+        .steps-list li::before {
+            content: counter(steps) ".";
+            position: absolute;
+            left: 0;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent);
+        }
+
+        .support-meta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="support">
+
+            <div class="app-hero">
+                <div class="app-icon">APP<br>ICON</div>
+                <div class="app-hero-text">
+                    <h1>CoastCast</h1>
+                    <p>Real-time beach conditions for 54 Michigan beaches across the Great Lakes. Water temperature,
+                        crowd predictions, wave data, weather alerts, and more — all in one place.</p>
+                    <div class="btn-group">
+                        <a href="https://testflight.apple.com/join/bHcPj25S" class="btn-primary" target="_blank"
+                            rel="noopener noreferrer">Download on TestFlight</a>
+                        <a href="coastcast.html" class="btn-ghost">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="support-block">
+                    <h2>Location</h2>
+
+                    <div class="faq-item">
+                        <h3>Why does CoastCast need my location?</h3>
+                        <p>CoastCast uses your location to sort beaches by how far away they are, show you beaches
+                            nearby on the map, and rank suggestions based on driving distance. Without it, the app can
+                            still show all 54 beaches, but distance-based features won't work.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I enable location access?</h3>
+                        <ol class="steps-list">
+                            <li>Open the Settings app on your iPhone.</li>
+                            <li>Scroll down and tap CoastCast.</li>
+                            <li>Tap Location.</li>
+                            <li>Select While Using the App or Always. Always is recommended if you use the home screen
+                                widget, so it can update when you're not in the app.</li>
+                        </ol>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Is my location stored or shared?</h3>
+                        <p>No. Your location is used on-device to calculate distances and is never stored on our
+                            servers or shared with any third party. See our <a
+                                href="coastcast-privacy.html">Privacy Policy</a> for full details.</p>
+                    </div>
+                </div>
+
+                <div class="support-block">
+                    <h2>Notifications</h2>
+
+                    <div class="faq-item">
+                        <h3>What kinds of notifications does CoastCast send?</h3>
+                        <p>CoastCast has three notification types:</p>
+                        <ul style="margin: 0.5rem 0 0 1.25rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+                            <li><strong>Daily best beach</strong> — a morning alert with the top-ranked beach for the
+                                day, scored at delivery time so it reflects current conditions.</li>
+                            <li><strong>Score threshold alerts</strong> — sent when a beach you favorited scores 70 or
+                                higher, so you only hear about it when conditions are actually good.</li>
+                            <li><strong>Severe weather warnings</strong> — active National Weather Service alerts for
+                                any beach in Michigan.</li>
+                        </ul>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I turn notifications on or off?</h3>
+                        <ol class="steps-list">
+                            <li>Open the Settings app.</li>
+                            <li>Scroll down and tap CoastCast.</li>
+                            <li>Tap Notifications.</li>
+                            <li>Toggle notifications on or off, or customize which types you receive.</li>
+                        </ol>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>I enabled notifications but I'm not receiving them.</h3>
+                        <p>Notifications refresh hourly in the background. Make sure Background App Refresh is enabled
+                            for CoastCast: Settings → CoastCast → Background App Refresh. If you're on Low Power Mode,
+                            background refresh is paused by iOS automatically.</p>
+                    </div>
+                </div>
+
+                <div class="support-block">
+                    <h2>TestFlight & Known Issues</h2>
+
+                    <div class="faq-item">
+                        <h3>How do I join the TestFlight beta?</h3>
+                        <ol class="steps-list">
+                            <li>Install the TestFlight app from the App Store if you haven't already.</li>
+                            <li>Open this link on your iPhone: <a href="https://testflight.apple.com/join/bHcPj25S"
+                                    target="_blank" rel="noopener noreferrer">TestFlight invite</a>.</li>
+                            <li>Tap Accept and then Install.</li>
+                        </ol>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>How do I report a bug or send feedback?</h3>
+                        <p>The fastest way is through TestFlight itself — take a screenshot inside the app and TestFlight
+                            will offer to send it as feedback. You can also reach us directly through the
+                            <a href="contact.html">contact page</a>.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>The widget stopped updating.</h3>
+                        <p>Widgets refresh every 30 minutes but iOS controls the actual schedule based on battery and
+                            usage patterns. If the widget looks stale, long-press it and tap Edit Widget to re-select
+                            your beach, which forces a refresh. If the problem persists, remove and re-add the widget.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Water temperature or buoy data is missing for a beach.</h3>
+                        <p>Not all 54 beaches have an active NOAA buoy nearby. When buoy data is unavailable, CoastCast
+                            falls back to a seasonal estimate based on historical data for that lake. The app will
+                            indicate which value you're seeing.</p>
+                    </div>
+                </div>
+
+                <div class="support-block">
+                    <h2>Contact</h2>
+                    <div class="faq-item">
+                        <h3>Still need help?</h3>
+                        <p>Reach us through the <a href="contact.html">CH Studios contact page</a> and mention
+                            CoastCast in your message. We typically respond within a few business days.</p>
+                    </div>
+                    <p class="support-meta" style="margin-top: 1.5rem;">CoastCast is built and maintained by CH Studios
+                        · Detroit, MI · Full App Store release planned May 2026</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
