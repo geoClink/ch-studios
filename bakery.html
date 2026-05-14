@@ -21,7 +21,7 @@
     <style>
         .stat-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             margin: 2rem 0;
         }
@@ -198,6 +198,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
             .feature-grid {
                 grid-template-columns: 1fr;
             }
@@ -240,6 +244,10 @@
 
                 <div class="stat-row">
                     <div class="stat-block">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Sides — Storefront + Admin</span>
+                    </div>
+                    <div class="stat-block">
                         <span class="stat-number">Real</span>
                         <span class="stat-label">Stripe Payments</span>
                     </div>
@@ -270,6 +278,7 @@
                 <div class="case-block">
                     <h2>Overview</h2>
                     <p>A production-capable full-stack ordering platform built to solve a real problem: small food businesses paying commissions to platforms they don't control and managing orders through DMs and phone calls. The Bakery Co. replaces that with a direct ordering system the business owns — real Stripe payments, a JWT-authenticated admin dashboard, transactional email and SMS, and three scheduled background jobs, all deployed on Render.</p>
+                    <p>Two sides to the product: a customer-facing storefront and a full business management backend — order queue, menu CMS, revenue dashboard, one-click refunds, inventory management, and CSV export, all behind JWT authentication.</p>
                     <p>The architecture is intentionally forkable — swap the menu items, colors, and business name and the full ordering and admin platform is ready to redeploy for any food business.</p>
                 </div>
 
@@ -493,7 +502,7 @@ cron.schedule('0 */4 * * *', sendUnfulfilledReminder);</code></pre>
 
             <div class="case-footer">
                 <div class="btn-group">
-                    <a href="https://geoclink.github.io/the-bakery-co/" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                    <a href="https://the-bakery-co.onrender.com/index.html" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
                     <a href="https://github.com/geoClink/the-bakery-co" class="btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
