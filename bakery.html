@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakery Co. - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
+    <meta name="description"
+        content="The Bakery Co. — A full-stack bakery ordering and business management platform with real Stripe payments, JWT-authenticated admin dashboard, transactional email/SMS, and scheduled cron jobs. Built by CH Studios.">
+    <meta property="og:title" content="The Bakery Co. | CH Studios">
+    <meta property="og:description"
+        content="The Bakery Co. — A full-stack bakery ordering and business management platform with real Stripe payments, JWT-authenticated admin dashboard, transactional email/SMS, and scheduled cron jobs. Built by CH Studios.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/bakery.html">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+
+        .contrib-list li strong {
+            color: var(--text);
+        }
+
+        .code-block {
+            background: #1d1f21;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .code-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .code-block pre {
+            margin: 0;
+            border-radius: 0;
+            background: #1d1f21 !important;
+        }
+
+        .challenge-block {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .challenge-block:last-child {
+            border-bottom: none;
+        }
+
+        .challenge-block h3 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .challenge-block p {
+            max-width: none;
+        }
+
+        .demo-video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            display: block;
+        }
+
+        .video-caption {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.6rem;
+            letter-spacing: 0.04em;
+        }
+
+        @media (max-width: 768px) {
+            .stat-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="work.html" class="back-link">← Back to Work</a>
+                <h1>The Bakery Co.</h1>
+                <p class="client">CH Studios · Full-Stack Web Platform</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Live on Render</span>
+                    <span class="badge badge-accent">iOS App Coming Soon</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express</span>
+                    <span class="badge">Supabase</span>
+                    <span class="badge">Stripe</span>
+                    <span class="badge">Resend</span>
+                    <span class="badge">Twilio</span>
+                    <span class="badge">Chart.js</span>
+                    <span class="badge">Fuse.js</span>
+                    <span class="badge">Render</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">Real</span>
+                        <span class="stat-label">Stripe Payments</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">JWT</span>
+                        <span class="stat-label">Auth on All Admin Routes</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Scheduled Cron Jobs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Demo</h2>
+                    <video src="images/bakery-demo.mp4" controls class="demo-video"></video>
+                    <p class="video-caption">Site walkthrough — storefront, fuzzy search, cart, checkout, and admin dashboard.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Small bakeries take orders by phone or Instagram DM, lose track of them, and pay 15–30% commission to DoorDash or Uber Eats to get discovered online. There's no system, no paper trail, and no way to know which items are low on stock before the morning rush. The goal was to build them a direct ordering system they own — one that replaces $200–500/month in tools like Square Online or Toast, costs them zero commission per order, and gives the owner a real dashboard instead of a phone full of DMs.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>A production-capable full-stack ordering platform built to solve a real problem: small food businesses paying commissions to platforms they don't control and managing orders through DMs and phone calls. The Bakery Co. replaces that with a direct ordering system the business owns — real Stripe payments, a JWT-authenticated admin dashboard, transactional email and SMS, and three scheduled background jobs, all deployed on Render.</p>
+                    <p>The architecture is intentionally forkable — swap the menu items, colors, and business name and the full ordering and admin platform is ready to redeploy for any food business.</p>
+                </div>
+
+                
+
+                <div class="case-block">
+                    <h2>Project Details</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Platform:</strong> Full-stack web app hosted on Render</li>
+                        <li><strong>Stack:</strong> HTML · CSS · JavaScript · Node.js · Express · Supabase · Stripe · Resend · Twilio · Chart.js · Fuse.js · GTM/GA4</li>
+                        <li><strong>Type:</strong> CH Studios product built to production-level completeness</li>
+                        <li><strong>Developer:</strong> George Clinkscales · Full-Stack Developer</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Tech Stack</h2>
+                    <ul class="stack-list">
+                        <li>Node.js + Express — backend API, middleware, routing</li>
+                        <li>Supabase (Postgres) — relational database, Auth, and file Storage in one service</li>
+                        <li>Stripe Elements — payment processing with PaymentIntents and webhook confirmation</li>
+                        <li>Resend — transactional email with branded HTML templates</li>
+                        <li>Twilio — SMS order status updates</li>
+                        <li>node-cron — three scheduled background jobs running server-side</li>
+                        <li>Fuse.js — fuzzy search with keyboard navigation on the storefront</li>
+                        <li>Chart.js — revenue graphs and analytics in the admin dashboard</li>
+                        <li>express-rate-limit — API rate limiting, stricter limits on the checkout endpoint</li>
+                        <li>Google Tag Manager / GA4 — analytics and event tracking</li>
+                        <li>Render — Node.js deployment with environment variable configuration</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Technical Decisions</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Why Supabase</h3>
+                            <p>Supabase bundles Postgres, Auth, and file Storage in one service — no separate auth server, no third-party image host, and one set of credentials to manage. For a product this scope, that consolidation meaningfully reduces operational complexity.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Payment-First Flow</h3>
+                            <p>The Stripe charge is confirmed via webhook before the order is written to the database. This prevents unpaid orders from entering the system — if the charge fails or the server crashes between payment and save, no phantom order appears in the admin queue.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>node-cron Inside the Server</h3>
+                            <p>Scheduled jobs run inside the Express process via node-cron. The tradeoff is simplicity vs. reliability — a server restart silently kills all scheduled jobs. A production deployment would use BullMQ or an external cron service.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Rate Limiting on Checkout</h3>
+                            <p>Rate limiting is applied specifically to the checkout endpoint, not just globally. Repeatedly hitting checkout could trigger Stripe fraud flags and put the merchant account at risk — that endpoint warranted its own stricter limit.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>API-Level Auth vs. UI-Level Auth</h3>
+                            <p>The admin dashboard checks login state in the UI — but every API route it calls also verifies the JWT server-side. Hiding a button in the browser isn't security. Any HTTP client can call <code>/api/admin/refund</code> directly.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Forkable Architecture</h3>
+                            <p>The codebase is structured so the whole platform can be reskinned for any food business — different menu items, colors, and business name — in a few hours. The business logic is the same regardless of what's being sold.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Stripe Checkout</h3>
+                            <p>Real payment processing via Stripe Elements — tip selection, delivery fee calculation, and minimum order enforcement all handled before the card is charged. Webhooks update order status in Supabase after payment confirmation.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Admin Dashboard</h3>
+                            <p>Full order management, revenue tracking with Chart.js graphs, a menu CMS with image uploads, inventory management, one-click refunds via the Stripe API, CSV export, and thermal receipt printing — all behind JWT authentication.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Transactional Email & SMS</h3>
+                            <p>Branded HTML email templates via Resend for order confirmations, fulfillment notifications, and low stock alerts. Twilio SMS for real-time order status updates so customers don't have to check their inbox.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Scheduled Cron Jobs</h3>
+                            <p>Three automated jobs on a schedule: a daily summary email, a weekly revenue report, and an unfulfilled order reminder — keeping the business informed without any manual effort.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Storefront & Cart</h3>
+                            <p>Live fuzzy search with keyboard navigation powered by Fuse.js. Shopping cart persisted to localStorage so items survive page refreshes. Customer order notes field so special requests reach the kitchen.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Security & Rate Limiting</h3>
+                            <p>JWT authentication on every admin API route. API rate limiting via express-rate-limit. No secrets exposed to the browser — all third-party API keys server-side only.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Product Thinking</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Scheduled pickup time slots with slot disabling.</strong> Past times are disabled, same-day slots within 2 hours are removed, and orders placed after 6pm roll to next-morning slots. A customer placing an order at 8pm shouldn't be able to select 9pm.</li>
+                        <li><strong>Minimum order enforcement before Stripe is called.</strong> The checkout button stays disabled until the cart meets the minimum. No partial charge attempts, no error messages from Stripe — the constraint is enforced in the UI before the payment flow starts.</li>
+                        <li><strong>Thermal receipt formatting (80mm).</strong> The admin's print receipt is formatted for a standard 80mm thermal receipt printer, not a browser print dialog. That's the printer sitting next to every point-of-sale terminal — getting this right makes the dashboard usable in a real kitchen.</li>
+                        <li><strong>Local timezone date filtering.</strong> An early version filtered orders by UTC date. A 10pm order in Detroit showed up under the wrong day because UTC midnight had already passed. Fixed by converting all date comparisons to the server's local timezone.</li>
+                        <li><strong>Refund button with graceful error handling.</strong> If the Stripe refund API call fails, the owner sees a human-readable message directing them to the Stripe dashboard. Not a raw error. Not a hanging spinner. A clear next step they can actually follow.</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Challenges</h2>
+
+                    <div class="challenge-block">
+                        <h3>Stripe Payment Flow — Payment-First, Then Save</h3>
+                        <p>Tips are optional and percentage-based, delivery fees vary by zone, and orders below a minimum need to be blocked before Stripe is ever called. All of this is calculated server-side — trusting the client for cart totals is a security problem.</p>
+                        <p>The key decision was payment-first: the Stripe charge must succeed before the order is written to the database. The frontend creates a PaymentIntent on the server, completes the Stripe flow, and only then does the webhook confirm and save the order. Stripe webhooks retry delivery until the order is recorded, so a server crash between payment and save doesn't create phantom orders.</p>
+                        <div class="code-block">
+                            <div class="code-label">Stripe Webhook — server.js</div>
+                            <pre><code class="language-javascript">app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+    const sig = req.headers['stripe-signature'];
+    let event;
+
+    try {
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    } catch (err) {
+        return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    if (event.type === 'payment_intent.succeeded') {
+        const paymentIntent = event.data.object;
+        const orderId = paymentIntent.metadata.order_id;
+
+        await supabase
+            .from('orders')
+            .update({ status: 'paid', stripe_payment_id: paymentIntent.id })
+            .eq('id', orderId);
+
+        await sendOrderConfirmationEmail(orderId);
+    }
+
+    res.json({ received: true });
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="challenge-block">
+                        <h3>JWT Authentication on Admin Routes</h3>
+                        <p>The admin dashboard can issue refunds, delete menu items, and export customer data. Every API route behind it needed to be protected so that only authenticated users could reach it — hiding a button in the browser isn't enough.</p>
+                        <p>Supabase Auth handles login and issues a JWT. On every admin API request, a middleware function verifies the token server-side before any data is read or written.</p>
+                        <div class="code-block">
+                            <div class="code-label">Auth Middleware — middleware/auth.js</div>
+                            <pre><code class="language-javascript">const requireAuth = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader?.startsWith('Bearer ')) {
+        return res.status(401).json({ error: 'No token provided' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+
+    if (error || !user) {
+        return res.status(401).json({ error: 'Invalid or expired token' });
+    }
+
+    req.user = user;
+    next();
+};
+
+// Applied to every admin route
+app.use('/api/admin', requireAuth);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="challenge-block">
+                        <h3>Scheduled Cron Jobs</h3>
+                        <p>The admin needed to receive a daily summary, a weekly revenue report, and alerts for unfulfilled orders — without having to remember to check anything manually.</p>
+                        <p>Three cron jobs run server-side using node-cron. Each queries Supabase for the relevant data, formats it, and sends via Resend. The unfulfilled order reminder only fires if there are actually open orders — no noise when the queue is clear.</p>
+                        <div class="code-block">
+                            <div class="code-label">Cron Jobs — jobs/scheduler.js</div>
+                            <pre><code class="language-javascript">import cron from 'node-cron';
+import { sendDailySummary, sendWeeklyReport, sendUnfulfilledReminder } from './emailJobs.js';
+
+// Daily summary — 8am every day
+cron.schedule('0 8 * * *', sendDailySummary);
+
+// Weekly report — Monday 9am
+cron.schedule('0 9 * * 1', sendWeeklyReport);
+
+// Unfulfilled order reminder — every 4 hours
+cron.schedule('0 */4 * * *', sendUnfulfilledReminder);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="challenge-block">
+                        <h3>Refund Button — Idempotency and Graceful Failure</h3>
+                        <p>The dashboard needed a refund button so the business owner could process returns without logging into Stripe. Two problems: pressing the button twice shouldn't issue two refunds, and when Stripe does fail, the owner needs a clear next step — not a raw error message.</p>
+                        <p>The refund endpoint checks whether the order already has a <code>refund_id</code> in Supabase before calling Stripe. If it does, it returns the existing refund. If the Stripe call fails, the UI shows a human-readable message directing the owner to the Stripe dashboard — a place they can actually go to resolve it.</p>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Business Impact</h2>
+                    <ul class="contrib-list">
+                        <li><strong>0% commission per order</strong> vs. 15–30% on DoorDash or Uber Eats. On a $50 order, that's $7–15 back in the owner's pocket, every time.</li>
+                        <li><strong>Replaces $200–500/month in SaaS tools</strong> — Square Online, Toast, and similar platforms charge for what this platform provides out of the box: online ordering, an admin dashboard, inventory management, and automated reporting.</li>
+                        <li><strong>Forkable in hours</strong> — the architecture is built to be reskinned for any food business. Swap the menu items, colors, and business name and the full ordering and admin platform is ready to redeploy.</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>The Bakery Co. is a production-capable full-stack ordering platform that covers the complete web engineering surface: frontend UX, backend API design, relational database, real payments, transactional messaging, and automated operations. Every feature was built around a real problem that real businesses face — and every piece required understanding how the components connect, not just how to write isolated code. Live on Render with a real Stripe integration.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Next Iteration</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Stripe webhook retry handling</strong> for the server-crash-between-payment-and-save edge case — the current flow relies on the server staying up during checkout</li>
+                        <li><strong>Customer accounts with order history</strong> — every order is currently guest checkout</li>
+                        <li><strong>Coupon and discount code support</strong> via Stripe's promotion code API</li>
+                        <li><strong>Token refresh logic</strong> on the admin session — the current JWT expires and boots the owner out mid-shift</li>
+                        <li><strong>Replace node-cron with BullMQ</strong> or an external cron service so scheduled jobs survive server restarts</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://geoclink.github.io/the-bakery-co/" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                    <a href="https://github.com/geoClink/the-bakery-co" class="btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
