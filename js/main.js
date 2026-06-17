@@ -65,13 +65,17 @@ const testimonials = [
         author: "- Ron Marshall - Marketing Mentor, Apple Developer Academy MSU"
     },
     {
+        quote: `"As I further develop my discipline as a UI/UX designer, the shared vision between the developers and the designers is imperative to create an amazing final product. After working with George, I can testify that he understands the importance of proper communication, research, and hard work. He would easily take any feedback I gave him and either implement it or offer me a new perspective on it. Working with him was a smooth process and I would definitely work with him again."`,
+        author: "- Tamia Brezzell - UI/UX Designer"
+    },
+    {
+        quote: `"Having the CH Studios team behind Tripsetta has been an absolute lifesaver. George is fast, knowledgeable, proactive, and always willing to dig deeper than what's immediately in front of him. He consistently identifies opportunities for improvement, solves problems quickly, and helps keep our platform moving forward. This partnership has been invaluable to our growth, and I couldn't be more appreciative of the work they've done."`,
+        author: "- LaShelle McClaster - Founder, Tripsetta"
+    },
+    {
         quote: `"Jaiden brought a rare combination of curiosity, precision, and initiative to our MVP build. His ability to take complex ideas and translate them into clear, actionable progress made a real difference in moving this work forward."`,
         author: "- Ashlee Cunningham - Founder, We Change Community Consulting"
     },
-    // {
-    //    quote: `"Sample quote."`,
-    //     author: "- Sample Author"
-    // },
 ];
 
 let currentIndex = 0;
