@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakery Co. Platform - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
+    <meta name="description"
+        content="The Bakery Co. Platform — a full business operating system built by CH Studios. Five connected surfaces on one Supabase backend: customer website, 18-section admin dashboard, iOS scheduling app, iOS POS, and iOS customer app.">
+    <meta property="og:title" content="The Bakery Co. Platform | CH Studios">
+    <meta property="og:description"
+        content="Five connected surfaces on one Supabase backend. Multi-tenant architecture ready to redeploy for any small business.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/work/bakery-co.html">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .feature-card ul {
+            margin: 0.4rem 0 0 1.1rem;
+            padding: 0;
+        }
+
+        .feature-card ul li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0.2rem;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+
+        .contrib-list li strong {
+            color: var(--text);
+        }
+
+        .code-block {
+            background: #1d1f21;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .code-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        .code-block pre {
+            margin: 0;
+            border-radius: 0;
+            background: #1d1f21 !important;
+        }
+
+        .surface-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .surface-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+        }
+
+        .surface-card-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .surface-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin: 0;
+        }
+
+        .surface-tag {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 0.15em 0.5em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .surface-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            max-width: none;
+        }
+
+        .surface-card ul {
+            margin: 0.4rem 0 0 1.1rem;
+            padding: 0;
+        }
+
+        .surface-card ul li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0.2rem;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .admin-item {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 0.5rem 0.75rem;
+            letter-spacing: 0.03em;
+        }
+
+        @media (max-width: 768px) {
+            .stat-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">CH Studios</a>
+        <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="../work.html" class="back-link">← Back to Work</a>
+                <h1>The Bakery Co. Platform</h1>
+                <p class="client">CH Studios · Full Business Operating System</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Web — Live on Render</span>
+                    <span class="badge badge-accent">iOS — TestFlight</span>
+                    <span class="badge badge-accent">Multi-Tenant</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express</span>
+                    <span class="badge">Supabase</span>
+                    <span class="badge">Stripe</span>
+                    <span class="badge">Stripe Terminal</span>
+                    <span class="badge">SwiftUI</span>
+                    <span class="badge">Deno</span>
+                    <span class="badge">MCP</span>
+                    <span class="badge">Resend</span>
+                    <span class="badge">Twilio</span>
+                    <span class="badge">Chart.js</span>
+                    <span class="badge">Fuse.js</span>
+                    <span class="badge">Render</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Connected Surfaces</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Admin Dashboard Sections</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Lighthouse Score</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">70ms</span>
+                        <span class="stat-label">Interaction Response</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>The Bakery Co. Platform is a full business operating system for small businesses — five connected surfaces built on a single Supabase (Postgres) backend. It started as a website and admin dashboard. It's now a web platform, a 18-section business dashboard, an iOS employee scheduling app, an iOS point-of-sale, and an iOS customer app — all HTTP clients against the same REST API.</p>
+                    <p>The architecture is multi-tenant from the start. Every table carries a <code>tenant_id</code>, every API route scopes to it, and nothing in the backend is specific to a bakery. The Salon Co. and Sports Bar Co. are next — onboarding a new client is one database row and a frontend deploy.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Small businesses run on fragmented tools. A bakery takes custom orders by DM, tracks inventory in a notebook, manages staff schedules by text message, and pays 15–30% commission to DoorDash or Uber Eats to get found online. There's no single source of truth. The owner can't see revenue, labor costs, and inventory in the same place — let alone act on any of it from their phone at 6am.</p>
+                    <p>The goal was to replace that stack with one platform the business owns: direct ordering with zero commission, an admin dashboard that replaces $200–500/month in SaaS tools, an iOS scheduling app that gives managers and staff everything they need on their phones, and a POS that works for in-person sales without a separate system.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Five Surfaces</h2>
+
+                    <div class="surface-grid">
+                        <div class="surface-card">
+                            <div class="surface-card-header">
+                                <h3>Customer Website</h3>
+                                <span class="surface-tag">HTML · CSS · JS · Node.js · Express · Render</span>
+                            </div>
+                            <p>The public-facing storefront. Fuzzy search via Fuse.js with keyboard navigation, shopping cart persisted to localStorage, real Stripe payments via Stripe Elements, and Stripe Checkout Sessions for MCP/AI-initiated orders. Dynamic OG tags injected server-side by Express for product pages. 100 on Lighthouse accessibility, SEO, and best practices. 70ms interaction response time across 20 pages.</p>
+                            <ul>
+                                <li>Collaborative filtering upsell — co-purchase frequency from <code>item_pairs</code> → curated pairings → time-aware cross-sell → best sellers</li>
+                                <li>Crumb Rewards loyalty — <code>Math.floor(total)</code> points per order, RPC-guarded increments</li>
+                                <li>Gift card redemption, coupon validation (expiry, max uses, per-customer, first-time-only)</li>
+                                <li>Birthday coupon cron — generates <code>BDAY-XXXXXXXX</code> at 8am, 15% off, expires midnight</li>
+                                <li>WebMCP integration — menu search, hours, and checkout registered as browser-native AI tools (Chrome 146+, W3C WebMCP)</li>
+                            </ul>
+                        </div>
+
+                        <div class="surface-card">
+                            <div class="surface-card-header">
+                                <h3>Admin Dashboard</h3>
+                                <span class="surface-tag">18 Sections · JWT Auth · Email-Verified</span>
+                            </div>
+                            <p>The full business management backend. JWT verified server-side on every API route — not just the UI. Every section described below. All reads and writes are scoped to <code>tenant_id</code>.</p>
+                        </div>
+
+                        <div class="surface-card">
+                            <div class="surface-card-header">
+                                <h3>KnotEmployee — iOS Scheduling App</h3>
+                                <span class="surface-tag">SwiftUI · @Observable · Supabase Realtime · APNs · Deno</span>
+                            </div>
+                            <p>Multi-tenant iOS scheduling and workforce management app. In TestFlight, targeting App Store. Uses the same Supabase backend as the web platform.</p>
+                            <ul>
+                                <li><strong>Manager:</strong> Drag-and-drop weekly schedule builder (7-column grid), template system, labor cost report with CSV export, approve/deny time off with conflict detection, approve/deny shift swaps and open shift pickups, team directory with live clock-in status, broadcast messaging, real-time alerts</li>
+                                <li><strong>Staff:</strong> Clock in/out with break tracking, weekly schedule view, time off requests (PTO/sick/personal) with balance tracking, shift swap requests, open shift pickup, direct messaging, earnings estimate</li>
+                                <li>APNs delivered via Deno Edge Function triggered by <code>kn_notifications</code> INSERT</li>
+                                <li>Custom KnotTheme design system with BakeryCoTheme (Cormorant Garamond, warm cream/espresso/rose/gold) and full dark mode</li>
+                                <li>MetricKit only — no third-party analytics</li>
+                            </ul>
+                        </div>
+
+                        <div class="surface-card">
+                            <div class="surface-card-header">
+                                <h3>iOS POS</h3>
+                                <span class="surface-tag">SwiftUI · Stripe Terminal</span>
+                            </div>
+                            <p>In-person point-of-sale for card payments via Stripe Terminal. Same backend as the website — an in-person sale is just another order in the same <code>orders</code> table, visible immediately in the admin dashboard order queue.</p>
+                        </div>
+
+                        <div class="surface-card">
+                            <div class="surface-card-header">
+                                <h3>iOS Customer App</h3>
+                                <span class="surface-tag">SwiftUI · Supabase iOS SDK</span>
+                            </div>
+                            <p>Native iOS ordering app for customers. Same Supabase backend, same REST API, same menu data — the customer app is another HTTP client against the same endpoints as the website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Admin Dashboard — 18 Sections</h2>
+                    <p>A complete business operations backend behind JWT + email-verified authentication. Every section is scoped to the current tenant.</p>
+
+                    <div class="admin-grid">
+                        <div class="admin-item">Dashboard</div>
+                        <div class="admin-item">Orders</div>
+                        <div class="admin-item">Revenue</div>
+                        <div class="admin-item">Menu CMS</div>
+                        <div class="admin-item">Inventory</div>
+                        <div class="admin-item">Coupons</div>
+                        <div class="admin-item">Hero Editor</div>
+                        <div class="admin-item">Hours</div>
+                        <div class="admin-item">Banner</div>
+                        <div class="admin-item">Store Settings</div>
+                        <div class="admin-item">Gift Cards</div>
+                        <div class="admin-item">Subscriptions</div>
+                        <div class="admin-item">Customers</div>
+                        <div class="admin-item">Messages</div>
+                        <div class="admin-item">Event Inquiries</div>
+                        <div class="admin-item">Applications</div>
+                        <div class="admin-item">Prep List</div>
+                        <div class="admin-item">Staff & POS PINs</div>
+                    </div>
+
+                    <ul class="contrib-list">
+                        <li><strong>Dashboard</strong> — stat cards, upcoming pickups, low-stock alerts</li>
+                        <li><strong>Orders</strong> — search/filter, mark fulfilled, 80mm thermal receipt print, CSV export</li>
+                        <li><strong>Revenue</strong> — today/all-time/AOV/tips/refunds, 7-day Chart.js graph, insights tab (best day of week, MoM growth, coupon impact, top sellers), margin table, tax report CSV</li>
+                        <li><strong>Menu CMS</strong> — add/edit/delete items, image upload to Supabase Storage, sale pricing with auto % calculation, cost/margin tracking, allergens, badges</li>
+                        <li><strong>Inventory</strong> — stock quantities, auto-decrements on order, sold-out toggle, low-stock email below threshold</li>
+                        <li><strong>Gift Cards</strong> — issued cards, remaining balance, active vs. used; Stripe webhook generates unique 16-char hex code and emails recipient via Resend</li>
+                        <li><strong>Subscriptions</strong> — create/edit/delete plans linked to menu items, weekly or monthly, MRR estimate, cancel individual; Stripe Checkout in subscription mode, <code>invoice.payment_succeeded</code> webhook auto-generates recurring orders</li>
+                        <li><strong>Customers</strong> — all accounts, loyalty points, manual adjustment</li>
+                        <li><strong>Prep List</strong> — auto-aggregates pending order items into one production list by date</li>
+                        <li><strong>Staff & POS PINs</strong> — employee name, role, permission level, 4-digit PINs, deactivate</li>
+                        <li><strong>Hours</strong> — open/close per day, reflects on the website and iOS instantly</li>
+                        <li><strong>Applications</strong> — job applications with position/availability/message; owner sets which roles are open</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Technical Architecture</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>One Backend, Five Clients</h3>
+                            <p>All five surfaces are HTTP clients against the same Express REST API and Supabase database. No special integration layer. An order placed through the iOS customer app, the website, or the POS lands in the same <code>orders</code> table, visible instantly in the admin dashboard.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Multi-Tenant from the Start</h3>
+                            <p>Every table carries a <code>tenant_id</code> column. Every API route scopes its queries to the current tenant before any data is read or written. Nothing in the codebase is bakery-specific. The Salon Co. and Sports Bar Co. are next — onboarding is one database row and a frontend deploy.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Supabase Realtime</h3>
+                            <p>KnotEmployee uses Supabase Realtime websockets so live clock-in status, new messages, and schedule updates propagate to all connected devices instantly — no polling, no manual refresh.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>APNs via Deno Edge Function</h3>
+                            <p>Push notifications in KnotEmployee are triggered by Supabase database events. When a row is inserted into the <code>kn_notifications</code> table, a Deno Edge Function fires and delivers the notification through Apple Push Notification Service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Key Technical Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Two Stripe Payment Flows</h3>
+                            <p>Stripe Elements for customer checkout (confirmCardPayment client-side, order saved only after webhook confirms). Stripe Checkout Sessions for MCP/AI-initiated orders (returns a hosted URL). A single webhook endpoint handles both flows via <code>metadata.source</code>.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>MCP Server</h3>
+                            <p>A production Model Context Protocol server built with <code>@modelcontextprotocol/sdk</code>. Three tools: <code>get_menu</code>, <code>get_hours</code>, and <code>place_order</code> — which validates stock, builds Stripe line items, and returns a checkout URL. AI assistants can browse the menu and complete a transaction without touching the website.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>WebMCP Integration</h3>
+                            <p>Shipped the week Google announced WebMCP at I/O 2026. Menu search, hours, and checkout are registered as browser-native AI tools via the W3C WebMCP standard (Chrome 146+). Customers using AI-enhanced browsers can order without leaving a chat interface.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Collaborative Filtering Upsell</h3>
+                            <p>Four-level fallback chain for "you might also like" suggestions: real co-purchase frequency from the <code>item_pairs</code> table → manually curated <code>paired_items</code> → time-aware cross-sell (breakfast/lunch/etc) → best sellers. Degrades gracefully for new menu items with no purchase history.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Crumb Rewards Loyalty</h3>
+                            <p><code>Math.floor(total)</code> points per order. Supabase RPC <code>increment_points</code> handles the increment atomically to prevent race conditions on concurrent orders. 100 points = $1 off.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>4 Cron Jobs</h3>
+                            <p>Daily 8pm summary, weekly Sunday report, unfulfilled order reminder every 2hrs, birthday coupon generation at 8am. Birthday coupons record <code>birthday_coupon_year</code> to prevent duplicate codes across calendar years.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Technical Decisions</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Payment-First, Then Save</h3>
+                            <p>The Stripe charge is confirmed via webhook before the order is written to the database. If the server crashes between payment and save, Stripe retries webhook delivery until the order is recorded. No phantom orders, no silent failures.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>API-Level Auth, Not UI-Level</h3>
+                            <p>Hiding a button in the browser isn't security. The admin dashboard checks login state in the UI — but every API route it calls also verifies the JWT server-side. Any HTTP client can call <code>/api/admin/refund</code> directly; the middleware catches it before any data is touched.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Rate Limiting on Checkout Only</h3>
+                            <p>Rate limiting is applied specifically to the checkout endpoint, not globally. Repeatedly hitting checkout could trigger Stripe fraud flags and put the merchant account at risk. That endpoint warranted its own stricter limit.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>@Observable Over ObservableObject</h3>
+                            <p>KnotEmployee uses Swift's <code>@Observable</code> macro (iOS 17+) instead of <code>ObservableObject</code>. Finer-grained observation means only the views that depend on a changed property re-render — critical for a scheduling app where one Realtime event can't ripple through the entire view hierarchy.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Supabase RPC for Points</h3>
+                            <p>Loyalty points use a Supabase RPC function instead of a read-then-write pattern. Two orders completing simultaneously against the same customer row would both read the same starting balance and one increment would be lost. The RPC runs atomically inside the database.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Deno for APNs</h3>
+                            <p>APNs delivery runs in a Deno Edge Function triggered by a Supabase database event, not inside the Express server. Keeps notification logic decoupled from the web API and eliminates a failure mode where the Node.js process going down silently drops mobile notifications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Unified Webhook Handler</h2>
+                    <p>Two distinct Stripe payment flows — Stripe Elements for direct checkout, Stripe Checkout Sessions for MCP orders — funnel into a single webhook endpoint. The handler branches on <code>metadata.source</code>.</p>
+                    <div class="code-block">
+                        <div class="code-label">Unified Webhook — server.js</div>
+                        <pre><code class="language-javascript">app.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+    const sig = req.headers['stripe-signature'];
+    let event;
+
+    try {
+        event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    } catch (err) {
+        return res.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    if (event.type === 'payment_intent.succeeded') {
+        const pi = event.data.object;
+
+        if (pi.metadata.source === 'mcp') {
+            await fulfillMcpOrder(pi);
+        } else {
+            await fulfillWebOrder(pi);
+        }
+    }
+
+    if (event.type === 'invoice.payment_succeeded') {
+        await generateSubscriptionOrder(event.data.object);
+    }
+
+    res.json({ received: true });
+});</code></pre>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Project Details</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Web platform:</strong> HTML · CSS · JavaScript · Node.js · Express · Supabase · Stripe · Resend · Twilio · Chart.js · Fuse.js · GTM/GA4 · Render</li>
+                        <li><strong>iOS apps:</strong> Swift · SwiftUI · @Observable · Supabase Realtime · Stripe Terminal · Deno Edge Functions · APNs · MetricKit</li>
+                        <li><strong>AI integrations:</strong> MCP server (<code>@modelcontextprotocol/sdk</code>) · W3C WebMCP (Chrome 146+)</li>
+                        <li><strong>Developer:</strong> George Clinkscales · CH Studios Detroit</li>
+                        <li><strong>Current client:</strong> The Bakery Co. · Next: The Salon Co., The Sports Bar Co.</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Business Impact</h2>
+                    <ul class="contrib-list">
+                        <li><strong>0% commission per order</strong> — vs. 15–30% on DoorDash or Uber Eats. On a $50 order, that's $7–15 back in the owner's pocket every time.</li>
+                        <li><strong>Replaces $200–500/month in SaaS tools</strong> — Square Online, Toast, scheduling apps, and POS software are all replaced by one platform.</li>
+                        <li><strong>One source of truth for the whole business</strong> — the same order that comes in through the website shows up in the admin queue, deducts from inventory, triggers an APNs notification in KnotEmployee, and generates a prep list item automatically.</li>
+                        <li><strong>Multi-tenant and ready to scale</strong> — The Salon Co. and Sports Bar Co. are the next two clients. Onboarding is one database row and a frontend deploy.</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>The Bakery Co. Platform covers the complete engineering surface of a real software business: frontend, API design, relational database, real payments, mobile development, background jobs, push notifications, transactional messaging, and AI integrations. Every feature solves a problem that real small businesses face. The web platform is live on Render with real Stripe payments. KnotEmployee is in TestFlight and targeting the App Store. The architecture is multi-tenant and ready for the next client.</p>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://the-bakery-co.onrender.com/index.html" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                    <a href="https://github.com/geoClink/the-bakery-co" class="btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
