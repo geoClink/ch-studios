@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="CH Studios gives back to Detroit. We reserve time each quarter to build technology for Detroit nonprofits, community organizations, and local causes.">
+    <meta property="og:title" content="Community | CH Studios">
+    <meta property="og:description"
+        content="CH Studios gives back to Detroit. We reserve time each quarter to build technology for Detroit nonprofits, community organizations, and local causes.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/community.html">
+
+    <style>
+        .community-hero {
+            max-width: 680px;
+            margin-bottom: 3.5rem;
+        }
+
+        .community-hero h1 {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .community-hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .community-block {
+            margin-bottom: 3rem;
+        }
+
+        .community-block h2 {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .community-block p {
+            color: var(--text-muted);
+            line-height: 1.75;
+            max-width: 680px;
+        }
+
+        .commit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .commit-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            text-align: center;
+        }
+
+        .commit-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .commit-label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .offer-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .offer-card:hover {
+            border-color: var(--accent);
+        }
+
+        .offer-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .offer-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            counter-reset: steps;
+        }
+
+        .steps-list li {
+            counter-increment: steps;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .step-content h3 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .partner-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .partner-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 0.3rem;
+        }
+
+        .partner-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .community-cta {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .community-cta h2 {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 0.6rem;
+        }
+
+        .community-cta p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 560px;
+        }
+
+        @media (max-width: 768px) {
+            .commit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="community">
+
+            <div class="community-hero">
+                <h1>Built in Detroit.<br>For Detroit.</h1>
+                <p>CH Studios was built by two Detroit-based developers who got their start through a community program — the Apple Developer Academy. We haven't forgotten that. Each quarter we reserve time to build technology for Detroit nonprofits, community organizations, and local causes that are doing meaningful work but don't have the resources for a software team.</p>
+            </div>
+
+            <div class="community-block">
+                <h2>Our Commitment</h2>
+                <div class="commit-grid">
+                    <div class="commit-card">
+                        <span class="commit-number">Q</span>
+                        <span class="commit-label">Quarterly Dedication</span>
+                    </div>
+                    <div class="commit-card">
+                        <span class="commit-number">Pro</span>
+                        <span class="commit-label">Bono & Reduced Rate</span>
+                    </div>
+                    <div class="commit-card">
+                        <span class="commit-number">Full</span>
+                        <span class="commit-label">Service & Support</span>
+                    </div>
+                </div>
+                <p>This isn't leftover time. We reserve dedicated hours each quarter specifically for community projects — the same quality and care we bring to every client, for organizations that are building up Detroit.</p>
+            </div>
+
+            <div class="community-block">
+                <h2>What We Build</h2>
+                <div class="offer-grid">
+                    <div class="offer-card">
+                        <h3>iOS Apps</h3>
+                        <p>Native iPhone apps built with SwiftUI — volunteer management, event registration, community directories, donor portals, or whatever your organization actually needs.</p>
+                    </div>
+                    <div class="offer-card">
+                        <h3>Websites</h3>
+                        <p>Fast, accessible, mobile-first websites that tell your story, accept donations, and show up on Google. No templates. Built the right way.</p>
+                    </div>
+                    <div class="offer-card">
+                        <h3>Web Apps & Dashboards</h3>
+                        <p>If you're managing volunteers, tracking programs, or coordinating events across a team — we build the tools that replace the spreadsheets.</p>
+                    </div>
+                    <div class="offer-card">
+                        <h3>Ongoing Support</h3>
+                        <p>We don't disappear after launch. Community partners get continued support so the technology keeps working as your organization grows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="community-block">
+                <h2>Past Community Work</h2>
+                <div class="partner-card">
+                    <h3>We Change Community Consulting</h3>
+                    <p>Built CommonSight, an iOS app for We Change Community Consulting — a Detroit-based organization focused on community development and civic engagement.</p>
+                </div>
+            </div>
+
+            <div class="community-block">
+                <h2>How It Works</h2>
+                <ol class="steps-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h3>Reach Out</h3>
+                            <p>Tell us about your organization and what you're trying to build or solve. No deck required.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h3>Quick Call</h3>
+                            <p>We'll schedule a short conversation to understand your mission and figure out whether we're the right fit.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h3>We Get to Work</h3>
+                            <p>Our team designs and builds the solution. You're involved throughout — this is your product.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <h3>Launch & Support</h3>
+                            <p>We ship it and stick around. Ongoing support so it keeps running after we hand it off.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="community-cta">
+                <h2>Is your organization a fit?</h2>
+                <p>We're looking for Detroit-based nonprofits and community organizations doing real work. Spots each quarter are limited. If that's you, reach out and let's talk.</p>
+                <a href="contact.html" class="btn-primary">Start the Conversation</a>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
