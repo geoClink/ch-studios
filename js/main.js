@@ -1,3 +1,26 @@
+// Mobile nav hamburger
+const nav = document.querySelector('nav');
+const navUl = document.querySelector('nav ul');
+if (nav && navUl) {
+    const toggle = document.createElement('button');
+    toggle.className = 'nav-toggle';
+    toggle.setAttribute('aria-label', 'Toggle navigation');
+    toggle.textContent = '☰';
+    nav.appendChild(toggle);
+
+    toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+    });
+
+    navUl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            toggle.textContent = '☰';
+        });
+    });
+}
+
 // Modal functions
 function openModal(id) {
     document.getElementById('modal-' + id).classList.add('active');

@@ -700,23 +700,62 @@ form button:hover {
     margin-bottom: 2rem;
 }
 
+/* ── NAV HAMBURGER ── */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
 /* ── MOBILE RESPONSIVE ── */
 @media (max-width: 768px) {
     /* Nav */
     nav {
         padding: 1rem 1.5rem;
-    }
-
-    nav ul {
-        gap: 1rem;
+        position: relative;
     }
 
     nav a {
         font-size: 0.9rem;
     }
 
+    .nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--background);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 1.5rem 1rem;
+    }
+
+    nav ul li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
     nav ul a {
-        font-size: 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    nav.open ul {
+        display: flex;
     }
 
     /* Sections */
