@@ -149,7 +149,8 @@
         .surface-card-header {
             display: flex;
             align-items: baseline;
-            gap: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
             margin-bottom: 0.6rem;
         }
 
@@ -193,22 +194,44 @@
             margin-bottom: 0.2rem;
         }
 
-        .screenshot-strip {
+        .screenshot-scroll {
             display: flex;
-            gap: 0.75rem;
+            gap: 1.25rem;
             overflow-x: auto;
-            padding: 1rem 0 0.5rem 0;
+            padding: 1.25rem 0 1rem 0;
+            margin-top: 1.25rem;
             scrollbar-width: thin;
             scrollbar-color: var(--border) transparent;
             -webkit-overflow-scrolling: touch;
         }
 
-        .screenshot-strip img {
-            height: 280px;
-            width: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border);
+        .phone-bezel {
             flex-shrink: 0;
+            width: 220px;
+            background: #1c1c1e;
+            border: 8px solid #2c2c2e;
+            border-radius: 44px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #3a3a3c, 0 16px 40px rgba(0,0,0,0.6);
+        }
+
+        .phone-bezel img {
+            width: 100%;
+            display: block;
+        }
+
+        .ipad-bezel {
+            flex-shrink: 0;
+            width: 320px;
+            background: #1c1c1e;
+            border: 10px solid #2c2c2e;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #3a3a3c, 0 16px 40px rgba(0,0,0,0.6);
+        }
+
+        .ipad-bezel img {
+            width: 100%;
             display: block;
         }
 
@@ -343,10 +366,13 @@
             .embed-tabs { display: none; }
             .embed-view-desktop { display: none !important; }
             .embed-view-mobile { display: flex !important; padding: 0; background: none; }
+            .phone-outer { width: 100%; }
             .phone-outer::before, .phone-outer::after { display: none; }
             .phone-shell { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 8px; box-shadow: none; background: var(--surface); }
             .phone-status-bar { display: none; }
             .phone-notch { display: none; }
+            .phone-bezel { width: 140px; border-radius: 28px; border-width: 6px; }
+            .ipad-bezel { width: 220px; border-radius: 16px; border-width: 8px; }
         }
     </style>
 </head>
@@ -395,7 +421,7 @@
                     </div>
                     <div class="stat-block">
                         <span class="stat-number">18</span>
-                        <span class="stat-label">Admin Dashboard Sections</span>
+                        <span class="stat-label">Admin Sections</span>
                     </div>
                     <div class="stat-block">
                         <span class="stat-number">100</span>
@@ -403,7 +429,7 @@
                     </div>
                     <div class="stat-block">
                         <span class="stat-number">70ms</span>
-                        <span class="stat-label">Interaction Response</span>
+                        <span class="stat-label">Response Time</span>
                     </div>
                 </div>
             </div>
@@ -455,12 +481,12 @@
                                 <li>Supabase Realtime — live clock-in status and schedule updates across all connected devices</li>
                                 <li>Custom KnotTheme design system with BakeryCoTheme and full dark mode</li>
                             </ul>
-                            <div class="screenshot-strip">
-                                <img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home">
-                                <img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View">
-                                <img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages">
-                                <img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home">
-                                <img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts">
+                            <div class="screenshot-scroll">
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts"></div>
                             </div>
                         </div>
 
@@ -470,10 +496,10 @@
                                 <span class="surface-tag">SwiftUI · Stripe Terminal</span>
                             </div>
                             <p>In-person point-of-sale for card payments via Stripe Terminal. An in-person sale is just another order in the same <code>orders</code> table — visible immediately in the admin dashboard queue.</p>
-                            <div class="screenshot-strip">
-                                <img src="../images/screenshots/knot-ios-pos/iosposneworderview.png" alt="New Order">
-                                <img src="../images/screenshots/knot-ios-pos/builditemview.png" alt="Build Item">
-                                <img src="../images/screenshots/knot-ios-pos/takepaymentview.png" alt="Take Payment">
+                            <div class="screenshot-scroll">
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-ios-pos/iosposneworderview.png" alt="New Order"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-ios-pos/builditemview.png" alt="Build Item"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/knot-ios-pos/takepaymentview.png" alt="Take Payment"></div>
                             </div>
                         </div>
 
@@ -483,10 +509,10 @@
                                 <span class="surface-tag">SwiftUI · Supabase iOS SDK</span>
                             </div>
                             <p>Native iOS ordering app. Same Supabase backend, same REST API, same menu data — another HTTP client against the same endpoints as the website.</p>
-                            <div class="screenshot-strip">
-                                <img src="../images/screenshots/ios-bakery-customer-app/ioshomeviewcustomerapp.png" alt="iOS Home">
-                                <img src="../images/screenshots/ios-bakery-customer-app/knotioscustomerappitemview.png" alt="Item View">
-                                <img src="../images/screenshots/ios-bakery-customer-app/knotioscartview.png" alt="Cart View">
+                            <div class="screenshot-scroll">
+                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/ioshomeviewcustomerapp.png" alt="iOS Home"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/knotioscustomerappitemview.png" alt="Item View"></div>
+                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/knotioscartview.png" alt="Cart View"></div>
                             </div>
                         </div>
                     </div>
