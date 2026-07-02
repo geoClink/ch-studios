@@ -19,16 +19,30 @@ if (nav && navUl) {
     toggle.textContent = '☰';
     nav.appendChild(toggle);
 
+    const backdrop = document.createElement('div');
+    backdrop.className = 'nav-backdrop';
+    document.body.appendChild(backdrop);
+
+    function openNav() {
+        nav.classList.add('open');
+        backdrop.classList.add('active');
+        toggle.textContent = '✕';
+    }
+
+    function closeNav() {
+        nav.classList.remove('open');
+        backdrop.classList.remove('active');
+        toggle.textContent = '☰';
+    }
+
     toggle.addEventListener('click', () => {
-        nav.classList.toggle('open');
-        toggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+        nav.classList.contains('open') ? closeNav() : openNav();
     });
 
+    backdrop.addEventListener('click', closeNav);
+
     navUl.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('open');
-            toggle.textContent = '☰';
-        });
+        link.addEventListener('click', closeNav);
     });
 }
 
@@ -71,6 +85,35 @@ document.querySelectorAll('.project, .service, .member, .case-block, #testimonia
     el.classList.add('fade-in');
     observer.observe(el);
 });
+
+function switchEmbedView(tabElement, viewType) {
+    // 1. Update Tab Styles
+    document.querySelectorAll('.embed-tab').forEach(tab => tab.classList.remove('active'));
+    tabElement.classList.add('active');
+
+    // 2. Toggle Iframe Visibility
+    if (viewType === 'mobile') {
+        document.querySelector('.embed-view-desktop').style.display = 'none';
+        document.querySelector('.embed-view-mobile').style.display = 'flex';
+    } else {
+        document.querySelector('.embed-view-desktop').style.display = 'block';
+        document.querySelector('.embed-view-mobile').style.display = 'none';
+    }
+}
+
+// Phone status bar clock
+(function () {
+    const el = document.getElementById('phone-time');
+    if (!el) return;
+    function tick() {
+        const now = new Date();
+        const h = now.getHours() % 12 || 12;
+        const m = String(now.getMinutes()).padStart(2, '0');
+        el.textContent = `${h}:${m}`;
+    }
+    tick();
+    setInterval(tick, 10000);
+})();
 
 // Typing animation
 const heroText = "A Detroit-based software studio crafting mobile apps and full stack products.";
