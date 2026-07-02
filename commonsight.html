@@ -14,8 +14,75 @@
     <meta property="og:title" content="CommonSight | CH Studios">
     <meta property="og:description"
         content="CommonSight is a civic tech platform built by CH Studios connecting Detroit residents and investors to accelerate neighborhood improvement.">
-    <meta property="og:url" content="https://geoclink.github.io/ch-studios/commonsight.html">
+    <meta property="og:url" content="https://chstudiosdetroit.com/commonsight.html">
     <meta property="og:image" content="https://chstudiosdetroit.com/images/og-image.png">
+
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -36,59 +103,59 @@
             <div class="case-header">
                 <a href="work.html" class="back-link">← Back to Work</a>
                 <h1>CommonSight</h1>
-                <p class="client">Client, We Change Community Consulting</p>
-                <span class="tech-stack">iOS · SwiftUI · Supabase</span>
+                <p class="client">Client — We Change Community Consulting · Detroit, MI</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">In Development</span>
+                    <span class="badge badge-accent">Client Work</span>
+                    <span class="badge">iOS</span>
+                    <span class="badge">SwiftUI</span>
+                    <span class="badge">Supabase</span>
+                </div>
             </div>
 
             <div class="case-body">
 
                 <div class="case-block">
                     <h2>Overview</h2>
-                    <p>CommonSight is a civic tech platform designed to connect Detroit residents and investors looking
-                        to
-                        improve neighborhoods. The app expedites the process of community development, allowing more
-                        people
-                        to get involved who otherwise wouldn't have access, while helping save the city money.</p>
+                    <p>CommonSight is a civic tech platform designed to connect Detroit residents and investors working to improve neighborhoods. The app expedites the process of community development, giving more people access to participate — while helping save the city money by making the process more efficient.</p>
                 </div>
 
                 <div class="case-block">
                     <h2>The Problem</h2>
-                    <p>Detroit neighborhood improvement has historically been slow and inaccessible. Residents who want
-                        to
-                        see change in their communities have no direct way to connect with investors, and investors have
-                        no
-                        efficient way to identify where their resources are most needed.</p>
+                    <p>Detroit neighborhood improvement has historically been slow and inaccessible. Residents who want to see change have no direct way to connect with investors, and investors have no efficient way to identify where resources are most needed. The gap between community need and available capital is a coordination problem — and no existing platform was built to solve it.</p>
                 </div>
 
                 <div class="case-block">
-                    <h2>The Solution</h2>
-                    <p>We helped the Founder build CommonSight to bridge that gap, a mobile platform that puts residents and investors in
-                        the
-                        same room digitally. The app surfaces neighborhood data, connects stakeholders, and streamlines
-                        a
-                        process that previously required significant time and city resources.</p>
+                    <h2>What We Built</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>iOS Application</h3>
+                            <p>Native SwiftUI app built for We Change Community Consulting under contract. Two distinct user roles — resident and investor — with views and data access scoped to each.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Supabase Backend</h3>
+                            <p>Authentication, database, and real-time capabilities via Supabase. User accounts, neighborhood data, and stakeholder connections all managed from a single backend.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Resident View</h3>
+                            <p>Residents surface neighborhood improvement needs, track local development activity, and connect with investors who can act on the information they provide.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Investor View</h3>
+                            <p>Investors browse neighborhood data, identify priority areas, and connect with residents — replacing a manual, city-resource-heavy process with a digital one.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="case-block">
                     <h2>Our Role</h2>
-                    <p>CH Studios was contracted by We Change Community Consulting to lead development of the
-                        CommonSight
-                        iOS application.</p>
-                </div>
-
-                <div class="case-block">
-                    <h2>Tech Stack</h2>
-                    <ul class="stack-list">
-                        <li>iOS & SwiftUI, native mobile frontend</li>
-                        <li>Supabase, backend and database</li>
-                    </ul>
+                    <p>CH Studios was contracted by We Change Community Consulting to lead development of the CommonSight iOS application — from architecture through implementation.</p>
                 </div>
 
                 <div class="case-block">
                     <h2>Outcome</h2>
-                    <p>Currently in active development under contract with We Change Community Consulting. Building
-                        toward a
-                        public launch serving Detroit residents and community investors.</p>
+                    <p>Currently in active development under contract with We Change Community Consulting, building toward a public launch serving Detroit residents and community investors.</p>
                 </div>
 
             </div>
@@ -96,9 +163,9 @@
         </section>
     </main>
     <footer>
-                <p>© 2026 CH Studios. Detroit, MI.</p>
-            </footer>
-            <script src="js/main.js"></script>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

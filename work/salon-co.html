@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Salon Co. - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <meta name="description"
+        content="The Salon Co. — a 14-page custom marketing and booking site for a luxury hair salon, built by CH Studios as an alternative to Squarespace with no recurring cost.">
+    <meta property="og:title" content="The Salon Co. | CH Studios">
+    <meta property="og:description"
+        content="14 pages, 100 Lighthouse, zero dependencies. A fully custom salon site with no monthly fee.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/work/salon-co.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-salon-co.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chstudiosdetroit.com/images/og-salon-co.jpg">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .browser-frame {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .browser-chrome {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .browser-dots span { width: 10px; height: 10px; border-radius: 50%; }
+        .browser-dots span:nth-child(1) { background: #ff5f57; }
+        .browser-dots span:nth-child(2) { background: #ffbd2e; }
+        .browser-dots span:nth-child(3) { background: #28c840; }
+
+        .browser-url {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.25em 0.75em;
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .site-embed {
+            width: 100%;
+            height: 620px;
+            border: none;
+            display: block;
+        }
+
+        .embed-fallback { display: none; padding: 1rem 0 0.5rem; }
+
+        @media (max-width: 768px) {
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 1.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .site-embed { display: none; }
+            .embed-fallback { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">CH Studios</a>
+        <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../community.html">Community</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="../work.html" class="back-link">← Back to Work</a>
+                <h1>The Salon Co.</h1>
+                <p class="client">CH Studios · Knot Platform Client</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Live on Vercel</span>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Formspree</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">14</span>
+                        <span class="stat-label">Pages</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Lighthouse Score</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Monthly Cost</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Dependencies</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>A 14-page marketing and booking site for a luxury hair salon — hand-written HTML, CSS, and JavaScript with no framework, no CMS, and no recurring cost. A direct alternative to Squarespace for salon owners who want something custom that's actually theirs.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Salon owners pay $30–150/month for Squarespace or similar platforms. The sites look like everyone else's, lack salon-specific features, and the owner is always one price increase away from losing access to their own web presence.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>What We Built</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Gallery & Portfolio</h3>
+                            <p>Filterable work showcase using JavaScript class toggling. No library, no build step — just fast, accessible filtering across all service categories.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Services & Pricing</h3>
+                            <p>Full services page with descriptions, pricing, and booking CTAs organized by category. Easy to scan, easy to update.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Smart Navigation</h3>
+                            <p>IntersectionObserver-powered sticky header that activates on scroll without layout shift. Zero JavaScript overhead at page load.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>CSS Carousel</h3>
+                            <p>Auto-rotating image gallery built with pure CSS animation. No JavaScript, no library — runs with zero runtime overhead.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Booking & Contact</h3>
+                            <p>Formspree-powered inquiry form routed directly to the owner's inbox. Appointment requests and consultation bookings handled without a backend.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Zero-Dependency Performance</h3>
+                            <p>100/100/100 Lighthouse across Performance, Accessibility, and SEO. Sub-second load, no build pipeline, no external dependencies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Live Site</h2>
+                    <div class="browser-frame">
+                        <div class="browser-chrome">
+                            <div class="browser-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-url">the-salon-co.vercel.app</div>
+                        </div>
+                        <iframe
+                            src="https://the-salon-co.vercel.app/"
+                            class="site-embed"
+                            title="The Salon Co. Live Site"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                    <p class="embed-fallback"><a href="https://the-salon-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-link">Open live site ↗</a></p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>A fully custom site the owner controls entirely — no recurring subscription, no platform branding, no lock-in. Part of the CH Studios Small Business Platform Suite, built on the same zero-dependency web architecture used across all Knot Platform clients.</p>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://the-salon-co.vercel.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                    <a href="knot.html" class="btn-ghost">Knot Platform</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knot Platform - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <meta name="description"
+        content="Knot is a full business operating system for small businesses — five connected surfaces on one Supabase backend, built by CH Studios.">
+    <meta property="og:title" content="Knot Platform | CH Studios">
+    <meta property="og:description"
+        content="One backend, five surfaces, four live clients. The small business OS built by CH Studios Detroit.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/work/knot.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-knot.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chstudiosdetroit.com/images/og-knot.jpg">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .client-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            text-decoration: none;
+            display: block;
+            transition: border-color 0.2s;
+        }
+
+        .client-card:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .client-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .client-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+
+        .contrib-list li strong {
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .stat-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .feature-grid,
+            .client-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">CH Studios</a>
+        <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../community.html">Community</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="../work.html" class="back-link">← Back to Work</a>
+                <h1>Knot Platform</h1>
+                <p class="client">CH Studios · Full Business Operating System</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">4 Live Clients</span>
+                    <span class="badge badge-accent">Multi-Tenant</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express</span>
+                    <span class="badge">Supabase</span>
+                    <span class="badge">Stripe</span>
+                    <span class="badge">SwiftUI</span>
+                    <span class="badge">Deno</span>
+                    <span class="badge">MCP</span>
+                    <span class="badge">Resend</span>
+                    <span class="badge">Twilio</span>
+                    <span class="badge">Render</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Live Clients</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Connected Surfaces</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Shared Backend</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Commission per Order</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>Knot is a full business operating system for small businesses — one Node/Express API, one Supabase database, and every operational surface a business needs. Menu changes, orders, and staff schedules propagate across all five surfaces without a redeploy. The architecture is multi-tenant by design: every table carries a <code>tenant_id</code>, and onboarding a new client is one database row and a frontend deploy.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Small businesses run on fragmented, expensive tools. Toast charges $200–500/month. Square takes a cut of every transaction on top of monthly fees. 7shifts bills per employee. None were built for the independent owner who needs everything to work together — without a developer on call every time something breaks.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Platform Components</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Customer Website</h3>
+                            <p>Fuzzy search via Fuse.js, Stripe checkout, loyalty rewards, gift cards, subscription ordering, and coupon validation. Zero commission per order.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Admin Dashboard</h3>
+                            <p>18-section business backend covering orders, revenue analytics, inventory, menu CMS, staff management, coupons, gift cards, subscriptions, and more. JWT-verified on every route.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>KnotEmployee iOS</h3>
+                            <p>Drag-and-drop scheduling, clock-in/out with break tracking, shift swaps, time-off requests, and APNs push notifications. Supabase Realtime for live status updates.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>iOS POS</h3>
+                            <p>In-person card payments via Stripe Terminal. Every sale lands in the same <code>orders</code> table as web orders — visible immediately in the admin dashboard.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>iOS Customer App</h3>
+                            <p>Native ordering on the same backend as the website. Same API, same data, same menu. Another HTTP client against the same REST endpoints.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>MCP Server</h3>
+                            <p>A production Model Context Protocol server with three tools: menu search, hours, and checkout. AI assistants can browse the menu and place a Stripe-backed order without touching the website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Live Clients</h2>
+                    <div class="client-grid">
+                        <a href="wellness-co.html" class="client-card">
+                            <h3>The Wellness Co.</h3>
+                            <p>Booking and memberships for solo wellness practitioners. Replaced a $100–200/month Mindbody subscription with owned infrastructure.</p>
+                        </a>
+                        <a href="bakery-co.html" class="client-card">
+                            <h3>The Bakery Co.</h3>
+                            <p>Ordering, subscriptions, loyalty rewards, and gift cards. First full five-surface platform deployment.</p>
+                        </a>
+                        <a href="salon-co.html" class="client-card">
+                            <h3>The Salon Co.</h3>
+                            <p>Marketing and booking site. A custom alternative to Squarespace with zero recurring software cost.</p>
+                        </a>
+                        <a href="sports-bar-co.html" class="client-card">
+                            <h3>The Sports Bar Co.</h3>
+                            <p>Table reservations, database-driven event calendar, and party inquiry routing. Replaced phone reservations and social posts.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Business Impact</h2>
+                    <ul class="contrib-list">
+                        <li><strong>$0 commission per order</strong> — vs. 15–30% on DoorDash or Uber Eats. On a $50 order, that's $7–15 back in the owner's pocket every time.</li>
+                        <li><strong>Replaces $200–500/month in SaaS tools</strong> — Square, Toast, scheduling apps, and POS software are all replaced by one platform the business owns.</li>
+                        <li><strong>One source of truth</strong> — an order placed through the website, the iOS app, or the POS lands in the same table, deducts from inventory, and appears instantly in the admin queue.</li>
+                        <li><strong>Ready to scale</strong> — onboarding a new client is one database row and a frontend deploy. No backend changes, no schema migration.</li>
+                    </ul>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>Four businesses are live on the platform across wellness, bakery, salon, and hospitality verticals. The architecture handles the full surface area of a real software business: frontend, API design, relational database, real payments, mobile development, background jobs, push notifications, and AI integrations — all on a single multi-tenant backend.</p>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

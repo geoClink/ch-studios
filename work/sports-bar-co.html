@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sports Bar Co. - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <meta name="description"
+        content="The Sports Bar Co. — a reservations and events platform for sports bars, built by CH Studios as a direct alternative to Toast with no platform lock-in.">
+    <meta property="og:title" content="The Sports Bar Co. | CH Studios">
+    <meta property="og:description"
+        content="Table reservations, live event calendar, and party inquiries — owned infrastructure with no commission or monthly fee.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/work/sports-bar-co.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-sports-bar-co.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chstudiosdetroit.com/images/og-sports-bar-co.jpg">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .browser-frame {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .browser-chrome {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .browser-dots span { width: 10px; height: 10px; border-radius: 50%; }
+        .browser-dots span:nth-child(1) { background: #ff5f57; }
+        .browser-dots span:nth-child(2) { background: #ffbd2e; }
+        .browser-dots span:nth-child(3) { background: #28c840; }
+
+        .browser-url {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.25em 0.75em;
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .site-embed {
+            width: 100%;
+            height: 620px;
+            border: none;
+            display: block;
+        }
+
+        .embed-fallback { display: none; padding: 1rem 0 0.5rem; }
+
+        @media (max-width: 768px) {
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 1.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .site-embed { display: none; }
+            .embed-fallback { display: block; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">CH Studios</a>
+        <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../community.html">Community</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="../work.html" class="back-link">← Back to Work</a>
+                <h1>The Sports Bar Co.</h1>
+                <p class="client">CH Studios · Knot Platform Client</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Live on Vercel</span>
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express</span>
+                    <span class="badge">Supabase</span>
+                    <span class="badge">Resend</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Core Features</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Lighthouse Score</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Monthly Cost</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Per-Reservation Fee</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>A reservations and events platform for sports bars — table booking, a live event calendar, and party inquiry routing. A direct alternative to Toast for owners who want a custom web presence without the monthly fee or platform lock-in.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Sports bars rely on events to drive traffic but manage reservations by phone and promote events through social posts that disappear after 48 hours. Platforms like Toast and OpenTable charge substantial monthly fees without offering the event-focused features a sports bar actually needs.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>What We Built</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Table Reservations</h3>
+                            <p>Booking form connected to Supabase with automatic email confirmation via Resend. Reservations land in the admin panel immediately.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Event Calendar</h3>
+                            <p>Database-driven event listings the owner manages from the admin panel. No social media post required — events live on the site permanently.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Party Inquiries</h3>
+                            <p>Lead capture form for private events and large party bookings, routed directly to the owner's inbox. No middleman, no platform fee.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Admin Dashboard</h3>
+                            <p>Owner manages upcoming reservations, event listings, and party inquiry submissions without touching code. All updates reflect live on the site.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>No-Commission Model</h3>
+                            <p>Every reservation goes directly to the owner. No per-booking fee, no revenue share, no platform take on large party events.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Owned Infrastructure</h3>
+                            <p>Deployed on Vercel. The owner controls the domain, the data, and the design — no dependency on a third-party platform to stay online.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Live Site</h2>
+                    <div class="browser-frame">
+                        <div class="browser-chrome">
+                            <div class="browser-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-url">the-sports-bar.vercel.app</div>
+                        </div>
+                        <iframe
+                            src="https://the-sports-bar.vercel.app/"
+                            class="site-embed"
+                            title="The Sports Bar Co. Live Site"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                    <p class="embed-fallback"><a href="https://the-sports-bar.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-link">Open live site ↗</a></p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>An integrated platform that replaced phone reservations and temporary social media event posts with owned, database-backed infrastructure. Part of the CH Studios Small Business Platform Suite — the same Supabase-backed architecture powers every Knot Platform client.</p>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://the-sports-bar.vercel.app/" class="btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                    <a href="knot.html" class="btn-ghost">Knot Platform</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
