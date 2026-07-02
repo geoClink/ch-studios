@@ -22,7 +22,7 @@
     <style>
         .stat-row {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin: 2rem 0;
         }
@@ -160,14 +160,33 @@
             display: block;
         }
 
-        .embed-fallback { display: none; padding: 1rem 0 0.5rem; }
+        .embed-tabs { display: flex; margin-left: auto; flex-shrink: 0; }
+        .embed-tab { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: none; border: 1px solid var(--border); padding: 0.2em 0.7em; cursor: pointer; transition: color 0.15s, background 0.15s; line-height: 1.6; }
+        .embed-tab:first-child { border-radius: 4px 0 0 4px; }
+        .embed-tab:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+        .embed-tab.active { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+        .embed-tab:hover:not(.active) { color: var(--text); }
+        .embed-view-mobile { display: none; justify-content: center; padding: 2rem 0; background: var(--surface); }
+        .admin-video { width: 100%; display: block; max-height: 560px; object-fit: cover; }
+        .phone-outer { position: relative; }
+        .phone-outer::before { content: ''; position: absolute; left: -3px; top: 120px; width: 3px; height: 32px; background: #3a3a3c; border-radius: 2px 0 0 2px; box-shadow: 0 48px 0 #3a3a3c; }
+        .phone-outer::after { content: ''; position: absolute; right: -3px; top: 160px; width: 3px; height: 58px; background: #3a3a3c; border-radius: 0 2px 2px 0; }
+        .phone-shell { width: 320px; height: 640px; background: #1c1c1e; border: 6px solid #2c2c2e; border-radius: 44px; overflow: hidden; position: relative; box-shadow: 0 0 0 1px #3a3a3c, 0 24px 48px rgba(0,0,0,0.6); display: flex; flex-direction: column; }
+        .phone-status-bar { height: 44px; background: #1c1c1e; flex-shrink: 0; position: relative; }
+        .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 34px; background: #1c1c1e; border-radius: 0 0 20px 20px; z-index: 10; pointer-events: none; }
+        .phone-iframe { flex: 1; width: 100%; border: none; display: block; }
 
         @media (max-width: 768px) {
             .stat-row { grid-template-columns: repeat(2, 1fr); }
             .stat-number { font-size: 1.5rem; }
             .feature-grid { grid-template-columns: 1fr; }
-            .site-embed { display: none; }
-            .embed-fallback { display: block; }
+            .embed-tabs { display: none; }
+            .embed-view-desktop { display: none !important; }
+            .embed-view-mobile { display: flex !important; padding: 0; background: none; }
+            .phone-outer::before, .phone-outer::after { display: none; }
+            .phone-shell { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 8px; box-shadow: none; background: var(--surface); }
+            .phone-status-bar { display: none; }
+            .phone-notch { display: none; }
         }
     </style>
 </head>
@@ -209,10 +228,6 @@
                     <div class="stat-block">
                         <span class="stat-number">2wk</span>
                         <span class="stat-label">Build to Handoff</span>
-                    </div>
-                    <div class="stat-block">
-                        <span class="stat-number">$0</span>
-                        <span class="stat-label">Monthly Software Cost</span>
                     </div>
                     <div class="stat-block">
                         <span class="stat-number">3</span>
@@ -264,6 +279,20 @@
                 </div>
 
                 <div class="case-block">
+                    <h2>Admin Dashboard</h2>
+                    <p>The practitioner manages services, availability, blocked dates, appointments, and client reviews from a private admin panel — no code required. All changes reflect live on the site.</p>
+                    <div class="browser-frame">
+                        <div class="browser-chrome">
+                            <div class="browser-dots"><span></span><span></span><span></span></div>
+                            <div class="browser-url">Admin Dashboard — Walkthrough</div>
+                        </div>
+                        <video class="admin-video" autoplay muted loop playsinline>
+                            <source src="../images/screenshots/wellness-co/wellnesscoadmindashboardwalkthrough-compressed.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="case-block">
                     <h2>Live Site</h2>
                     <div class="browser-frame">
                         <div class="browser-chrome">
@@ -271,15 +300,23 @@
                                 <span></span><span></span><span></span>
                             </div>
                             <div class="browser-url">the-wellness-co.vercel.app</div>
+                            <div class="embed-tabs">
+                                <button class="embed-tab active" onclick="switchEmbedView(this, 'desktop')">Desktop</button>
+                                <button class="embed-tab" onclick="switchEmbedView(this, 'mobile')">Mobile</button>
+                            </div>
                         </div>
-                        <iframe
-                            src="https://the-wellness-co.vercel.app/"
-                            class="site-embed"
-                            title="The Wellness Co. Live Site"
-                            loading="lazy"
-                        ></iframe>
+                        <iframe src="https://the-wellness-co.vercel.app/" class="site-embed embed-view-desktop" title="The Wellness Co. — Desktop" loading="lazy"></iframe>
+                        <div class="embed-view-mobile">
+                            <div class="phone-outer">
+                                <div class="phone-shell">
+                                    <div class="phone-status-bar">
+                                        <div class="phone-notch"></div>
+                                    </div>
+                                    <iframe src="https://the-wellness-co.vercel.app/" class="phone-iframe" title="The Wellness Co. — Mobile" loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="embed-fallback"><a href="https://the-wellness-co.vercel.app/" target="_blank" rel="noopener noreferrer" class="case-link">Open live site ↗</a></p>
                 </div>
 
                 <div class="case-block">

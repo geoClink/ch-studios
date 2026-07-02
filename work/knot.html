@@ -151,6 +151,79 @@
             max-width: none;
         }
 
+        .browser-frame {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .browser-chrome {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .browser-dots span { width: 10px; height: 10px; border-radius: 50%; }
+        .browser-dots span:nth-child(1) { background: #ff5f57; }
+        .browser-dots span:nth-child(2) { background: #ffbd2e; }
+        .browser-dots span:nth-child(3) { background: #28c840; }
+
+        .browser-url {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.25em 0.75em;
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .site-embed {
+            width: 100%;
+            height: 620px;
+            border: none;
+            display: block;
+        }
+
+        .embed-tabs { display: flex; margin-left: auto; flex-shrink: 0; }
+        .embed-tab { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); background: none; border: 1px solid var(--border); padding: 0.2em 0.7em; cursor: pointer; transition: color 0.15s, background 0.15s; line-height: 1.6; }
+        .embed-tab:first-child { border-radius: 4px 0 0 4px; }
+        .embed-tab:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+        .embed-tab.active { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+        .embed-tab:hover:not(.active) { color: var(--text); }
+        .embed-view-mobile { display: none; justify-content: center; padding: 2rem 0; background: var(--surface); }
+        .phone-outer { position: relative; }
+        .phone-outer::before { content: ''; position: absolute; left: -3px; top: 120px; width: 3px; height: 32px; background: #3a3a3c; border-radius: 2px 0 0 2px; box-shadow: 0 48px 0 #3a3a3c; }
+        .phone-outer::after { content: ''; position: absolute; right: -3px; top: 160px; width: 3px; height: 58px; background: #3a3a3c; border-radius: 0 2px 2px 0; }
+        .phone-shell { width: 320px; height: 640px; background: #1c1c1e; border: 6px solid #2c2c2e; border-radius: 44px; overflow: hidden; position: relative; box-shadow: 0 0 0 1px #3a3a3c, 0 24px 48px rgba(0,0,0,0.6); display: flex; flex-direction: column; }
+        .phone-status-bar { height: 44px; background: #1c1c1e; flex-shrink: 0; position: relative; }
+        .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 34px; background: #1c1c1e; border-radius: 0 0 20px 20px; z-index: 10; pointer-events: none; }
+        .phone-iframe { flex: 1; width: 100%; border: none; display: block; }
+
+        @media (max-width: 768px) {
+            .embed-tabs { display: none; }
+            .embed-view-desktop { display: none !important; }
+            .embed-view-mobile { display: flex !important; padding: 0; background: none; }
+            .phone-outer::before, .phone-outer::after { display: none; }
+            .phone-shell { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 8px; box-shadow: none; background: var(--surface); }
+            .phone-status-bar { display: none; }
+            .phone-notch { display: none; }
+        }
+
         .contrib-list {
             list-style: none;
             display: flex;
@@ -281,6 +354,33 @@
                         <div class="feature-card">
                             <h3>MCP Server</h3>
                             <p>A production Model Context Protocol server with three tools: menu search, hours, and checkout. AI assistants can browse the menu and place a Stripe-backed order without touching the website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Live Site</h2>
+                    <div class="browser-frame">
+                        <div class="browser-chrome">
+                            <div class="browser-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="browser-url">knot-landing-page.vercel.app</div>
+                            <div class="embed-tabs">
+                                <button class="embed-tab active" onclick="switchEmbedView(this, 'desktop')">Desktop</button>
+                                <button class="embed-tab" onclick="switchEmbedView(this, 'mobile')">Mobile</button>
+                            </div>
+                        </div>
+                        <iframe src="https://knot-landing-page.vercel.app/" class="site-embed embed-view-desktop" title="Knot Platform — Desktop" loading="lazy"></iframe>
+                        <div class="embed-view-mobile">
+                            <div class="phone-outer">
+                                <div class="phone-shell">
+                                    <div class="phone-status-bar">
+                                        <div class="phone-notch"></div>
+                                    </div>
+                                    <iframe src="https://knot-landing-page.vercel.app/" class="phone-iframe" title="Knot Platform — Mobile" loading="lazy"></iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

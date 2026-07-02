@@ -1,3 +1,14 @@
+// Embed view tab switcher
+function switchEmbedView(btn, view) {
+    const frame = btn.closest('.browser-frame');
+    frame.querySelectorAll('.embed-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const desktop = frame.querySelector('.embed-view-desktop');
+    const mobile = frame.querySelector('.embed-view-mobile');
+    if (desktop) desktop.style.display = view === 'desktop' ? 'block' : 'none';
+    if (mobile) mobile.style.display = view === 'mobile' ? 'flex' : 'none';
+}
+
 // Mobile nav hamburger
 const nav = document.querySelector('nav');
 const navUl = document.querySelector('nav ul');
