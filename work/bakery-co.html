@@ -148,9 +148,7 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.4rem;
-    /* This prevents the card from stretching the grid if content is too wide */
     min-width: 0;
-    overflow: hidden; 
 }
 
         .surface-card-header {
@@ -203,16 +201,12 @@
 
         .screenshot-scroll {
     display: flex;
-    gap: 1.25rem;
-    /* This enables the horizontal scroll */
+    gap: 2rem;
     overflow-x: auto;
-    /* Important: explicitly allow the container to be wider than its parent */
     width: 100%;
-    padding-bottom: 1rem;
-    /* Smooth touch scrolling */
+    padding: 10px 10px 2rem;
     -webkit-overflow-scrolling: touch;
-    /* Hides scrollbar on some browsers while keeping functionality */
-    scrollbar-width: none; 
+    scrollbar-width: none;
 }
 
 /* Hide scrollbar for Chrome/Safari */
@@ -223,14 +217,62 @@
         .phone-bezel {
             flex-shrink: 0;
             width: 220px;
-            background: #1c1c1e;
-            border: 8px solid #2c2c2e;
-            border-radius: 44px;
-            overflow: hidden;
-            box-shadow: 0 0 0 1px #3a3a3c, 0 16px 40px rgba(0,0,0,0.6);
+            background: #111113;
+            border-radius: 40px;
+            padding: 4px 4px 6px;
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.1),
+                0 0 0 1.5px #5c5c61,
+                0 0 0 3.5px #111113,
+                0 0 0 5px #3e3e43,
+                0 8px 24px rgba(0,0,0,0.18);
+            position: relative;
         }
 
-        .phone-bezel img {
+        .phone-bezel::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 145px;
+            width: 4px;
+            height: 58px;
+            background: #4a4a50;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .phone-bezel::after {
+            display: none;
+        }
+
+        .phone-btns-left {
+            position: absolute;
+            left: -8px;
+            top: 92px;
+            width: 4px;
+            height: 20px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before,
+        .phone-btns-left::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 4px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before { top: 28px; height: 34px; }
+        .phone-btns-left::after  { top: 72px; height: 34px; }
+
+        .phone-screen-static {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .phone-screen-static img {
             width: 100%;
             display: block;
         }
@@ -259,14 +301,12 @@
 .ipad-screen {
     border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
     background: #000;
 }
 
 .ipad-screen img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
@@ -439,7 +479,9 @@
             .phone-outer { width: auto; }
             .phone-outer::before, .phone-outer::after { display: none; }
             .phone-shell { width: min(300px, calc(100vw - 3rem)); height: 580px; border: 6px solid #2c2c2e; border-radius: 44px; box-shadow: 0 0 0 1px #3a3a3c, 0 16px 40px rgba(0,0,0,0.5); background: #1c1c1e; }
-            .phone-bezel { width: 140px; border-radius: 28px; border-width: 6px; }
+            .phone-bezel { width: 140px; border-radius: 28px; }
+            .phone-bezel::before, .phone-btns-left { display: none; }
+            .phone-screen-static { border-radius: 22px; }
             .ipad-mockup { width: 280px; padding: 8px; }
             .ipad-mockup--lg { width: 340px; }
             .ipad-screen { border-radius: 8px; }
@@ -541,11 +583,11 @@
                                 <li>Custom KnotTheme design system with BakeryCoTheme and full dark mode</li>
                             </ul>
                             <div class="screenshot-scroll">
-                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts"></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts"></div></div>
                             </div>
                         </div>
 
@@ -581,9 +623,9 @@
                             </div>
                             <p>Native iOS ordering app. Same Supabase backend, same REST API, same menu data — another HTTP client against the same endpoints as the website.</p>
                             <div class="screenshot-scroll">
-                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/ioshomeviewcustomerapp.png" alt="iOS Home"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/knotioscustomerappitemview.png" alt="Item View"></div>
-                                <div class="phone-bezel"><img src="../images/screenshots/ios-bakery-customer-app/knotioscartview.png" alt="Cart View"></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/ios-bakery-customer-app/ioshomeviewcustomerapp.png" alt="iOS Home"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/ios-bakery-customer-app/knotioscustomerappitemview.png" alt="Item View"></div></div>
+                                <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/ios-bakery-customer-app/knotioscartview.png" alt="Cart View"></div></div>
                             </div>
                         </div>
                     </div>

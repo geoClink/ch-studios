@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnotEmployee - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <meta name="description"
+        content="KnotEmployee — a dual-surface iOS scheduling and workforce management app built by CH Studios as part of the Knot Platform.">
+    <meta property="og:title" content="KnotEmployee | CH Studios">
+    <meta property="og:description"
+        content="Manager and employee surfaces in one native iOS app — scheduling, real-time sync, and APNs push notifications on the Knot Platform backend.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/work/knotemployee.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-knot.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://chstudiosdetroit.com/images/og-knot.jpg">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .role-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+        }
+
+        .role-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .role-card ul {
+            margin: 0 0 0 1.1rem;
+            padding: 0;
+        }
+
+        .role-card ul li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .screenshot-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            width: 100%;
+            padding: 10px 10px 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .screenshot-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .phone-bezel {
+            flex-shrink: 0;
+            width: 220px;
+            background: #111113;
+            border-radius: 40px;
+            padding: 4px 4px 6px;
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.1),
+                0 0 0 1.5px #5c5c61,
+                0 0 0 3.5px #111113,
+                0 0 0 5px #3e3e43,
+                0 8px 24px rgba(0,0,0,0.18);
+            position: relative;
+        }
+
+        .phone-bezel::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 145px;
+            width: 4px;
+            height: 58px;
+            background: #4a4a50;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .phone-bezel::after {
+            display: none;
+        }
+
+        .phone-btns-left {
+            position: absolute;
+            left: -8px;
+            top: 92px;
+            width: 4px;
+            height: 20px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before,
+        .phone-btns-left::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 4px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before { top: 28px; height: 34px; }
+        .phone-btns-left::after  { top: 72px; height: 34px; }
+
+        .phone-screen-static {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .phone-screen-static img {
+            width: 100%;
+            display: block;
+        }
+
+        .contrib-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .contrib-list li {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+            line-height: 1.6;
+        }
+
+        .contrib-list li strong {
+            color: var(--text);
+        }
+
+        .knot-link-card {
+            display: block;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            text-decoration: none;
+            transition: border-color 0.2s;
+            margin-top: 1.5rem;
+        }
+
+        .knot-link-card:hover {
+            border-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .knot-link-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .knot-link-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        @media (max-width: 768px) {
+            .stat-row { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 1.5rem; }
+            .feature-grid, .role-grid { grid-template-columns: 1fr; }
+            .phone-bezel { width: 140px; border-radius: 28px; }
+            .phone-bezel::before, .phone-btns-left { display: none; }
+            .phone-screen-static { border-radius: 22px; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">CH Studios</a>
+        <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../work.html">Work</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../community.html">Community</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="../work.html" class="back-link">← Back to Work</a>
+                <h1>KnotEmployee</h1>
+                <p class="client">CH Studios · Knot Platform · iOS</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">iOS — TestFlight</span>
+                    <span class="badge badge-accent">SwiftUI</span>
+                    <span class="badge badge-accent">Knot Platform</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">User Roles</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">RT</span>
+                        <span class="stat-label">Live Sync</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">APNs</span>
+                        <span class="stat-label">Push Delivery</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Deployments</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>KnotEmployee is the workforce management layer of the Knot Platform — a dual-surface iOS app serving both managers and employees at small businesses. The manager surface handles scheduling, labor cost reporting, shift approvals, and direct messaging. The employee surface handles clock-in/out, shift pickup, time-off requests, and push notifications. Both are HTTP clients against the same Supabase backend powering the customer website, admin dashboard, and POS — so a schedule change or clock-in event updates the same database the owner sees in real time.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Small business workforce management runs on group texts, paper schedules, and manual clock-in sheets. Apps like 7shifts and Homebase charge per employee per month and operate as separate systems disconnected from the ordering and inventory data. KnotEmployee is built directly into the Knot Platform — labor cost, schedule, and order volume share one source of truth.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Two Surfaces, One App</h2>
+                    <div class="role-grid">
+                        <div class="role-card">
+                            <h3>Manager</h3>
+                            <ul>
+                                <li>Drag-and-drop weekly schedule builder</li>
+                                <li>Labor cost reports by day and week</li>
+                                <li>Shift swap and time-off approvals</li>
+                                <li>Team directory and direct messaging</li>
+                                <li>Clock-in status board — live across all devices</li>
+                                <li>Push notification broadcasts to all staff</li>
+                            </ul>
+                        </div>
+                        <div class="role-card">
+                            <h3>Employee</h3>
+                            <ul>
+                                <li>View and manage assigned shifts</li>
+                                <li>Clock in and out with break tracking</li>
+                                <li>Request shift swaps and open shift pickup</li>
+                                <li>Submit time-off with PTO balance visibility</li>
+                                <li>Direct messaging with manager and team</li>
+                                <li>Real-time push notifications for schedule changes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Screenshots</h2>
+                    <div class="screenshot-scroll">
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts"></div></div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Technical Highlights</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Supabase Realtime</h3>
+                            <p>Clock-in status and schedule updates propagate live across all connected manager devices without a refresh. A manager sees an employee clock in the moment it happens.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>APNs via Deno Edge Function</h3>
+                            <p>Push notifications fire from a Deno Edge Function triggered by Supabase database events — decoupled from the Express server so a backend outage can't silently drop mobile notifications.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>@Observable Architecture</h3>
+                            <p>KnotEmployee uses Swift's <code>@Observable</code> macro instead of <code>ObservableObject</code> for finer-grained view updates. Only views that depend on a changed property re-render — critical when one Realtime event touches the full schedule state.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Multi-Tenant by Design</h3>
+                            <p>Every query is scoped to a <code>tenant_id</code>. The same app binary serves every Knot Platform deployment — onboarding a new business is one row, not a new build.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>KnotTheme Design System</h3>
+                            <p>A custom SwiftUI theme layer allows per-tenant visual identities. BakeryCoTheme swaps colors and fonts at the root — the underlying components and navigation are shared across all deployments.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Shift Swap Approval Flow</h3>
+                            <p>Shift swap requests move through a state machine in Supabase — pending, approved, rejected. A database trigger fires the APNs notification the moment a manager approves, without polling.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <ul class="contrib-list">
+                        <li><strong>Replaces 7shifts and Homebase</strong> — no per-employee monthly fee, no separate login, no disconnected system.</li>
+                        <li><strong>Live across all devices</strong> — Supabase Realtime means the schedule and clock-in board update instantly for every manager on the floor.</li>
+                        <li><strong>One backend</strong> — labor cost and order volume share the same database. A busy Saturday shows up in both the schedule and the revenue report.</li>
+                        <li><strong>Multi-tenant and TestFlight-ready</strong> — currently in TestFlight, targeting App Store submission.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="knot.html" class="btn-ghost">Knot Platform</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

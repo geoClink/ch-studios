@@ -247,6 +247,117 @@
             color: var(--text);
         }
 
+        .screenshot-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            width: 100%;
+            padding: 10px 10px 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .screenshot-scroll::-webkit-scrollbar { display: none; }
+
+        .phone-bezel {
+            flex-shrink: 0;
+            width: 220px;
+            background: #111113;
+            border-radius: 40px;
+            padding: 4px 4px 6px;
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.1),
+                0 0 0 1.5px #5c5c61,
+                0 0 0 3.5px #111113,
+                0 0 0 5px #3e3e43,
+                0 8px 24px rgba(0,0,0,0.18);
+            position: relative;
+        }
+
+        .phone-bezel::before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 145px;
+            width: 4px;
+            height: 58px;
+            background: #4a4a50;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .phone-bezel::after { display: none; }
+
+        .phone-btns-left {
+            position: absolute;
+            left: -8px;
+            top: 92px;
+            width: 4px;
+            height: 20px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before,
+        .phone-btns-left::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 4px;
+            background: #4a4a50;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .phone-btns-left::before { top: 28px; height: 34px; }
+        .phone-btns-left::after  { top: 72px; height: 34px; }
+
+        .phone-screen-static {
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .phone-screen-static img {
+            width: 100%;
+            display: block;
+        }
+
+        .ipad-mockup {
+            flex: 0 0 auto;
+            width: 520px;
+            background: #111113;
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow:
+                inset 0 0 0 1px rgba(255,255,255,0.15),
+                0 0 0 1.5px #5c5c61,
+                0 0 0 4px #111113,
+                0 0 0 6px #3e3e43,
+                0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .ipad-screen {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .ipad-screen img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .section-link {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-top: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .section-link:hover { text-decoration: underline; }
+
         @media (max-width: 768px) {
             .stat-row {
                 grid-template-columns: repeat(2, 1fr);
@@ -260,6 +371,12 @@
             .client-grid {
                 grid-template-columns: 1fr;
             }
+
+            .phone-bezel { width: 140px; border-radius: 28px; }
+            .phone-bezel::before, .phone-btns-left { display: none; }
+            .phone-screen-static { border-radius: 22px; }
+            .ipad-mockup { width: 300px; padding: 8px; border-radius: 14px; }
+            .ipad-screen { border-radius: 8px; }
         }
     </style>
 </head>
@@ -412,6 +529,30 @@
                             <p>Table reservations, database-driven event calendar, and party inquiry routing. Replaced phone reservations and social posts.</p>
                         </a>
                     </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>iOS POS</h2>
+                    <p>Native iPad point-of-sale on Stripe Terminal. Every in-person sale lands in the same <code>orders</code> table as web and app orders — unified inventory, unified reporting, no separate system.</p>
+                    <div class="screenshot-scroll">
+                        <div class="ipad-mockup"><div class="ipad-screen"><img src="../images/screenshots/knot-ios-pos/iosposneworderview.png" alt="New Order"></div></div>
+                        <div class="ipad-mockup"><div class="ipad-screen"><img src="../images/screenshots/knot-ios-pos/builditemview.png" alt="Build Item"></div></div>
+                        <div class="ipad-mockup"><div class="ipad-screen"><img src="../images/screenshots/knot-ios-pos/takepaymentview.png" alt="Take Payment"></div></div>
+                    </div>
+                    <a href="ios-pos.html" class="section-link">Full Case Study →</a>
+                </div>
+
+                <div class="case-block">
+                    <h2>KnotEmployee</h2>
+                    <p>Dual-surface iOS scheduling and workforce management — manager and employee views in one app. Drag-and-drop scheduling, live clock-in status via Supabase Realtime, and APNs push via Deno Edge Function.</p>
+                    <div class="screenshot-scroll">
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerhome.png" alt="Manager Home"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managerteamview.png" alt="Team View"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/managermessagesscreen.png" alt="Messages"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeehome.png" alt="Employee Home"></div></div>
+                        <div class="phone-bezel"><div class="phone-btns-left"></div><div class="phone-screen-static"><img src="../images/screenshots/knot-employee/employeeopenshifts.png" alt="Open Shifts"></div></div>
+                    </div>
+                    <a href="knotemployee.html" class="section-link">Full Case Study →</a>
                 </div>
 
                 <div class="case-block">
