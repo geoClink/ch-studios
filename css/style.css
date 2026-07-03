@@ -168,6 +168,7 @@ footer {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
+    white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -830,9 +831,11 @@ form button:hover {
     .btn-group {
         flex-direction: column;
         gap: 0.75rem;
+        align-items: flex-start;
     }
 
-    .btn-primary, .btn-ghost {
+    .case-footer .btn-primary,
+    .case-footer .btn-ghost {
         text-align: center;
         width: 100%;
     }
