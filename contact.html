@@ -19,8 +19,8 @@
 
     <style>
         .contact-intro {
-            max-width: 560px;
-            margin-bottom: 2.5rem;
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
         }
 
         .contact-intro h1 {
@@ -107,7 +107,8 @@
         }
 
         .contact-direct {
-            margin-top: 2rem;
+            max-width: 680px;
+            margin: 2rem auto 0;
             font-family: var(--font-mono);
             font-size: 0.82rem;
             color: var(--text-muted);
@@ -115,6 +116,13 @@
 
         .contact-direct a {
             color: var(--accent);
+        }
+
+        #contact-form,
+        #form-success {
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 600px) {
@@ -209,7 +217,9 @@
                     <textarea name="message" placeholder="What are you building? What problem are you trying to solve?" rows="6" required></textarea>
                 </div>
 
-                <button type="submit">Send Message</button>
+                <div style="text-align: center;">
+                    <button type="submit">Send Message</button>
+                </div>
 
             </form>
 
