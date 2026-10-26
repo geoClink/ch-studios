@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="Meet the team behind CH Studios, a Detroit-based software studio built by George Clinkscales and Jaiden Henley, specializing in iOS and full stack development.">
+    <meta property="og:title" content="About | CH Studios">
+    <meta property="og:description"
+        content="Meet the team behind CH Studios, a Detroit-based software studio built by George Clinkscales and Jaiden Henley, specializing in iOS and full stack development.">
+    <meta property="og:url" content="https://geoclink.github.io/ch-studios/about.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-image.png">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="about">
+            <h1>About CH Studios</h1>
+            <p>A Detroit-based software studio crafting mobile apps and full stack products.</p>
+
+            <p class="founding-story">We were both new to coding when we met at the Apple Developer Academy. We got
+                randomly
+                assigned to a project together, worked well, and just kept choosing to work with each other. When a
+                client
+                needed an LLC to pay us for services, we stopped being classmates and became a studio. That was the
+                moment
+                CH Studios was born, not from a business plan, but from good work and the right opportunity.</p>
+
+            <div class="team-grid">
+
+                <div class="member" onclick="openModal('jaiden')">
+                    <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley">
+                    <h2>Jaiden Henley</h2>
+                    <p>iOS & Full-Stack Engineer</p>
+                    <div class="member-links">
+                        <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank" rel="noopener noreferrer"
+                            onclick="event.stopPropagation()">LinkedIn</a>
+                        <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer"
+                            onclick="event.stopPropagation()">GitHub</a>
+                        <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank"
+                            rel="noopener noreferrer" onclick="event.stopPropagation()">Portfolio</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+
+        <!-- Jaiden Modal -->
+        <div class="modal" id="modal-jaiden">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('jaiden')">✕</button>
+                <img src="images/team/jaiden-headshot.jpg" alt="Jaiden Henley" class="modal-headshot">
+                <h2>Jaiden Henley</h2>
+                <p class="modal-role">iOS & Full-Stack Engineer · Co-Founder</p>
+                <p>I'm a Detroit native and Apple Developer Academy graduate who builds across the full stack, SwiftUI
+                    interfaces, Python backends, and CoreML models. I care about shipping software that feels native to
+                    the
+                    platform, not just functional. My app QuickStudy is live on the App Store, using on-device Apple
+                    Intelligence and Apple's Vision framework to turn notes and photos into study flashcards instantly.
+                </p>
+                <div class="modal-details">
+                    <span>🎓 Apple Developer Academy, Graduating May 2026</span>
+                    <span>📱 <a href="https://apps.apple.com/us/app/quickstudy-flashcard-tool/id6759993537"
+                            target="_blank" rel="noopener noreferrer">QuickStudy, View on App Store</a></span>
+                </div>
+                <div class="member-links">
+                    <a href="https://www.linkedin.com/in/jaiden-henley/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/jaidenhenley" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://jaidenhenley.github.io/JaidenHenleyPort/" target="_blank"
+                        rel="noopener noreferrer">Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+                <p>© 2026 CH Studios. Detroit, MI.</p>
+            </footer>
+            <script src="js/main.js"></script>
+</body>
+
+</html>

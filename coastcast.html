@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoastCast - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="CoastCast is a full-platform iOS app covering 54 Michigan beaches across the Great Lakes, built by CH Studios. Real-time conditions, WidgetKit, Dynamic Island, and on-device ML.">
+    <meta property="og:title" content="CoastCast | CH Studios">
+    <meta property="og:description"
+        content="CoastCast is a full-platform iOS app covering 54 Michigan beaches across the Great Lakes, built by CH Studios. Real-time conditions, WidgetKit, Dynamic Island, and on-device ML.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/coastcast.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-image.png">
+
+    <style>
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-block {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: none;
+        }
+
+        .arch-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        .arch-table th {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .arch-table td {
+            padding: 0.7rem 1rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .arch-table td:first-child {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem 0;
+        }
+
+        .badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.3em 0.8em;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-accent {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .stat-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="case-study">
+
+            <div class="case-header">
+                <a href="work.html" class="back-link">← Back to Work</a>
+                <h1>CoastCast</h1>
+                <p class="client">CH Studios · Apple Developer Academy Challenge 5</p>
+
+                <div class="badge-row">
+                    <span class="badge badge-accent">Live on App Store</span>
+                    <span class="badge">SwiftUI</span>
+                    <span class="badge">CoreML</span>
+                    <span class="badge">Python FastAPI</span>
+                    <span class="badge">WeatherKit</span>
+                    <span class="badge">WidgetKit</span>
+                    <span class="badge">App Intents</span>
+                    <span class="badge">Live Activities</span>
+                    <span class="badge">MapKit</span>
+                    <span class="badge">iOS 17+</span>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-block">
+                        <span class="stat-number">54</span>
+                        <span class="stat-label">Michigan Beaches</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Great Lakes</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">40yr</span>
+                        <span class="stat-label">ML Training Data</span>
+                    </div>
+                    <div class="stat-block">
+                        <span class="stat-number">6+</span>
+                        <span class="stat-label">Live Data Sources</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-body">
+
+                <div class="case-block">
+                    <h2>Overview</h2>
+                    <p>CoastCast is a full-platform iOS beach conditions app covering 54 Michigan beaches across all five Great Lakes. Water temperature, crowd predictions, weekly weather forecasts, active weather alerts, and water quality data — all in one place, so you know if a beach is worth the drive before you leave. An on-device CoreML model predicts crowd levels with zero latency and no internet required.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>The Problem</h2>
+                    <p>Michigan has some of the best freshwater beaches in the world and no reliable way to know if conditions are worth the drive. Weather apps don't show water temperature or wave height. Beach websites are outdated. There's no way to know how crowded a beach will be before you arrive. CoastCast was built to answer one question in under 30 seconds: <em>is it worth going to the beach today?</em></p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Our Role</h2>
+                    <p>CH Studios owned the full product: Python FastAPI backend, CoreML model training and on-device integration, SwiftUI frontend, and all native iOS platform features — WidgetKit, Live Activities, App Intents, and BGTaskScheduler.</p>
+                </div>
+
+                <div class="case-block">
+                    <h2>Platform Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>On-Device ML</h3>
+                            <p>XGBoost crowd prediction model trained on 40 years of state park attendance data, converted to CoreML. Zero latency, no internet required. Cyclical month encoding, holiday detection, and historical water temperature fallback.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Smart Map</h3>
+                            <p>Hand-built clustering algorithm — no library. Zoom-adaptive grid bucketing shows beach counts from altitude and individual pins up close. Card strip updates in real time as the user pans across Michigan.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Beach Scoring Engine</h3>
+                            <p>Weighted algorithm evaluates temperature, wind, precipitation, UV index, proximity, crowd tolerance, and favorites status to rank suggestions for today and the upcoming weekend.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Siri Shortcuts</h3>
+                            <p>Two App Intents — one opens a beach in the app, one fetches live conditions and speaks them back through Siri without opening the app at all.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Live Activities</h3>
+                            <p>Dynamic Island and Lock Screen tracker with compact, expanded, and minimal regions. Shows crowd level, water temp, and UV index while driving to the beach.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Smart Notifications</h3>
+                            <p>Three tiers: daily best beach scored at delivery time, threshold alerts when a favorite exceeds a score of 70, and NWS severe weather push. All powered by hourly BGTaskScheduler refresh.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-block">
+                    <h2>System Architecture</h2>
+                    <table class="arch-table">
+                        <thead>
+                            <tr>
+                                <th>Layer</th>
+                                <th>Technology</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Weather</td>
+                                <td>WeatherKit</td>
+                                <td>Current conditions, 10-day forecast, hourly</td>
+                            </tr>
+                            <tr>
+                                <td>Buoy Data</td>
+                                <td>NOAA NDBC via FastAPI</td>
+                                <td>Water temp, wave height, wave period</td>
+                            </tr>
+                            <tr>
+                                <td>Water Quality</td>
+                                <td>Beach monitor via FastAPI</td>
+                                <td>E. coli levels and swim safety status</td>
+                            </tr>
+                            <tr>
+                                <td>Alerts</td>
+                                <td>NWS via FastAPI</td>
+                                <td>Severity, urgency, and expiry</td>
+                            </tr>
+                            <tr>
+                                <td>Traffic</td>
+                                <td>TomTom via FastAPI</td>
+                                <td>Road speed and closures near each beach</td>
+                            </tr>
+                            <tr>
+                                <td>Crowd ML</td>
+                                <td>CoreML (XGBoost)</td>
+                                <td>On-device — low, moderate, busy</td>
+                            </tr>
+                            <tr>
+                                <td>Persistence</td>
+                                <td>SwiftData</td>
+                                <td>Favorites and user preferences</td>
+                            </tr>
+                            <tr>
+                                <td>Home Screen</td>
+                                <td>WidgetKit + ActivityKit</td>
+                                <td>Small/medium widgets and Dynamic Island</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="case-block">
+                    <h2>Outcome</h2>
+                    <p>CoastCast is live on the App Store. On-device CoreML inference eliminated backend compute costs for crowd prediction entirely. The app surfaces beach intelligence across every surface of the iPhone — home screen widget, Dynamic Island, Siri, and Lock Screen notifications — without requiring the app to be open.</p>
+                </div>
+
+            </div>
+
+            <div class="case-footer">
+                <div class="btn-group">
+                    <a href="https://apps.apple.com/us/app/coastcast/id6760917476" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="images/logos/app-store-light-download.svg" alt="Download on the App Store"
+                            class="app-store-badge">
+                    </a>
+                    <a href="https://github.com/jaidenhenley/Swift-MichiganAPIWeather" class="btn-ghost" target="_blank"
+                        rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

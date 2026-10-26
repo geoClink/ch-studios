@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CH Studios</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="description"
+        content="Get in touch with CH Studios. Based in Detroit and available for new projects in 2026.">
+    <meta property="og:title" content="Contact | CH Studios">
+    <meta property="og:description"
+        content="Get in touch with CH Studios. Based in Detroit and available for new projects in 2026.">
+    <meta property="og:url" content="https://chstudiosdetroit.com/contact.html">
+    <meta property="og:image" content="https://chstudiosdetroit.com/images/og-image.png">
+
+    <style>
+        .contact-intro {
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .contact-intro h1 {
+            font-family: var(--font-mono);
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-intro p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+        }
+
+        .form-group label .required {
+            color: var(--accent);
+            margin-left: 0.2em;
+        }
+
+        form select {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.85rem 1rem;
+            color: var(--text);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            cursor: pointer;
+        }
+
+        form select:focus {
+            border-color: var(--accent);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .radio-group input[type="radio"] {
+            accent-color: var(--accent);
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+        }
+
+        .contact-direct {
+            max-width: 680px;
+            margin: 2rem auto 0;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .contact-direct a {
+            color: var(--accent);
+        }
+
+        #contact-form,
+        #form-success {
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">CH Studios</a>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="contact">
+
+            <div class="contact-intro">
+                <h1>Let's Connect</h1>
+                <p>Based in Detroit. Available for new projects in 2026. Tell us what you're building and we'll get back to you within 24–48 hours.</p>
+            </div>
+
+            <div id="form-success" style="display:none; padding: 1.5rem; border: 1px solid var(--accent); border-radius: 8px; margin-bottom: 2rem;">
+                <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); margin: 0;">Message sent. We'll get back to you within 24–48 hours.</p>
+            </div>
+
+            <form id="contact-form" action="https://formspree.io/f/mgorpnzq" method="POST">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name <span class="required">*</span></label>
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Company or Organization</label>
+                        <input type="text" name="company" placeholder="Optional">
+                    </div>
+                    <div class="form-group">
+                        <label>Service <span class="required">*</span></label>
+                        <select name="service" required>
+                            <option value="" disabled selected>Select a service</option>
+                            <option value="iOS App Development">iOS App Development</option>
+                            <option value="Full-Stack Web">Full-Stack Web</option>
+                            <option value="MVP / Prototype">MVP / Prototype</option>
+                            <option value="API & Backend">API & Backend</option>
+                            <option value="App & Website Maintenance">App & Website Maintenance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Project Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="project_type" value="New project" required> New project</label>
+                        <label><input type="radio" name="project_type" value="Redesign / Update"> Redesign / Update</label>
+                        <label><input type="radio" name="project_type" value="Consultation"> Consultation</label>
+                        <label><input type="radio" name="project_type" value="Not sure yet"> Not sure yet</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>How did you hear about us?</label>
+                    <select name="referral">
+                        <option value="" disabled selected>Select one</option>
+                        <option value="Google">Google</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="GitHub">GitHub</option>
+                        <option value="Word of mouth">Word of mouth</option>
+                        <option value="Apple Developer Academy">Apple Developer Academy</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tell us about your project <span class="required">*</span></label>
+                    <textarea name="message" placeholder="What are you building? What problem are you trying to solve?" rows="6" required></textarea>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="submit">Send Message</button>
+                </div>
+
+            </form>
+
+            <p class="contact-direct">Or reach us directly at <a href="mailto:contact@chstudiosdetroit.com">contact@chstudiosdetroit.com</a></p>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 CH Studios. Detroit, MI.</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const button = form.querySelector('button[type="submit"]');
+            button.textContent = 'Sending...';
+            button.disabled = true;
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            } else {
+                button.textContent = 'Send Message';
+                button.disabled = false;
+                alert('Something went wrong. Please email us directly at contact@chstudiosdetroit.com');
+            }
+        });
+    </script>
+</body>
+
+</html>
